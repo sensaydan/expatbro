@@ -225,7 +225,7 @@ export default function Home() {
             No upsells. No courses. Just straight talk.
           </p>
           <a
-            href="https://calendly.com/dan-thomson/expat-strategy"
+            href="https://calendly.com/dan-thomson/consult"
             target="_blank"
             className="inline-block bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold px-12 py-4 rounded-lg text-xl transition"
           >

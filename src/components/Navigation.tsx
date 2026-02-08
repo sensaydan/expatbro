@@ -34,6 +34,12 @@ export default function Navigation() {
               </Link>
             ))}
             <Link
+              href="/blog"
+              className="text-slate-300 hover:text-amber-400 transition"
+            >
+              Blog
+            </Link>
+            <Link
               href="/#book"
               className="bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold px-4 py-2 rounded-lg transition"
             >
@@ -63,6 +69,13 @@ export default function Navigation() {
                 {country.emoji} {country.name}
               </Link>
             ))}
+            <Link
+              href="/blog"
+              className="block py-2 text-slate-300 hover:text-amber-400"
+              onClick={() => setIsOpen(false)}
+            >
+              📝 Blog
+            </Link>
             <Link
               href="/#book"
               className="block mt-4 bg-amber-500 text-slate-900 font-semibold px-4 py-2 rounded-lg text-center"

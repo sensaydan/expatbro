@@ -146,7 +146,7 @@ export default async function CityPage({ params }: Props) {
             Get the real talk — neighborhoods to avoid, visa tricks, where to find an apartment, and more.
           </p>
           <a
-            href="https://calendly.com/dan-thomson/expat-strategy"
+            href="https://calendly.com/dan-thomson/consult"
             target="_blank"
             className="inline-block bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold px-8 py-4 rounded-lg text-lg transition"
           >
