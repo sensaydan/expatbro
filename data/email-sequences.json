@@ -1,0 +1,38 @@
+{
+  "welcome": {
+    "name": "Welcome Sequence",
+    "trigger": "signup",
+    "emails": [
+      {
+        "id": "welcome-1",
+        "delay_days": 0,
+        "subject": "Welcome to Expat Bro - Here's what to expect",
+        "template": "welcome-1"
+      },
+      {
+        "id": "welcome-2",
+        "delay_days": 2,
+        "subject": "The #1 mistake expats make (and how to avoid it)",
+        "template": "welcome-2"
+      },
+      {
+        "id": "welcome-3",
+        "delay_days": 5,
+        "subject": "Your country comparison cheat sheet",
+        "template": "welcome-3"
+      },
+      {
+        "id": "welcome-4",
+        "delay_days": 8,
+        "subject": "Real cost of living numbers (not YouTube fantasy)",
+        "template": "welcome-4"
+      },
+      {
+        "id": "welcome-5",
+        "delay_days": 12,
+        "subject": "Ready to get serious? Let's talk.",
+        "template": "welcome-5-cta"
+      }
+    ]
+  }
+}

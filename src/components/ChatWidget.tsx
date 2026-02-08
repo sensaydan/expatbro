@@ -7,19 +7,22 @@ interface Message {
   content: string;
 }
 
+interface Lead {
+  email: string;
+  name?: string;
+  timestamp: string;
+  source: string;
+}
+
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      role: "assistant",
-      content:
-        "Hey! I'm the Expat Bro AI. Ask me anything about moving to Mexico, Colombia, Venezuela, or Brazil. 🌎",
-    },
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
-  const [emailCaptured, setEmailCaptured] = useState(false);
+  const [name, setName] = useState("");
+  const [isUnlocked, setIsUnlocked] = useState(false);
+  const [emailError, setEmailError] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -29,6 +32,68 @@ export default function ChatWidget() {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  // Check if already unlocked (localStorage)
+  useEffect(() => {
+    const savedEmail = localStorage.getItem("expatbro_email");
+    if (savedEmail) {
+      setEmail(savedEmail);
+      setIsUnlocked(true);
+      setMessages([
+        {
+          role: "assistant",
+          content: `Welcome back! 🌎 Ask me anything about moving to Mexico, Colombia, Venezuela, or Brazil.`,
+        },
+      ]);
+    }
+  }, []);
+
+  const validateEmail = (email: string) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
+  const handleEmailSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setEmailError("");
+
+    if (!email.trim()) {
+      setEmailError("Email is required");
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      setEmailError("Please enter a valid email");
+      return;
+    }
+
+    // Save to localStorage
+    localStorage.setItem("expatbro_email", email);
+    if (name) localStorage.setItem("expatbro_name", name);
+
+    // Send to API
+    try {
+      await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          name: name || undefined,
+          source: "chat_widget",
+        }),
+      });
+    } catch (error) {
+      console.error("Failed to save lead:", error);
+    }
+
+    // Unlock chat
+    setIsUnlocked(true);
+    setMessages([
+      {
+        role: "assistant",
+        content: `Thanks${name ? `, ${name}` : ""}! 🌎 I'm the Expat Bro AI. Ask me anything about moving to Mexico, Colombia, Venezuela, or Brazil.\n\nI can help with:\n• Cost of living\n• Best neighborhoods\n• Visa requirements\n• Safety info\n• Dating & social life\n• Banking setup\n\nWhat would you like to know?`,
+      },
+    ]);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -45,7 +110,8 @@ export default function ChatWidget() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           message: userMessage,
-          history: messages.slice(-6), // Last 6 messages for context
+          history: messages.slice(-6),
+          email,
         }),
       });
 
@@ -67,22 +133,6 @@ export default function ChatWidget() {
     } finally {
       setIsLoading(false);
     }
-  };
-
-  const handleEmailSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email.trim()) return;
-
-    // In production, send to your email list API
-    console.log("Email captured:", email);
-    setEmailCaptured(true);
-    setMessages((prev) => [
-      ...prev,
-      {
-        role: "assistant",
-        content: `Thanks! I've saved ${email}. Dan might reach out with tips and updates. Now, what else can I help you with?`,
-      },
-    ]);
   };
 
   return (
@@ -120,91 +170,122 @@ export default function ChatWidget() {
               </div>
               <div>
                 <h3 className="font-bold text-white">Expat Bro AI</h3>
-                <p className="text-xs text-slate-400">Ask anything about LATAM</p>
+                <p className="text-xs text-slate-400">Your LATAM relocation guide</p>
               </div>
             </div>
           </div>
 
-          {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4">
-            {messages.map((msg, i) => (
-              <div
-                key={i}
-                className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
-              >
-                <div
-                  className={`max-w-[80%] rounded-2xl px-4 py-2 ${
-                    msg.role === "user"
-                      ? "bg-amber-500 text-slate-900"
-                      : "bg-slate-700 text-white"
-                  }`}
-                >
-                  <p className="text-sm whitespace-pre-wrap">{msg.content}</p>
-                </div>
+          {!isUnlocked ? (
+            /* Email Gate */
+            <div className="flex-1 flex flex-col justify-center p-6">
+              <div className="text-center mb-6">
+                <div className="text-4xl mb-4">🌎</div>
+                <h3 className="text-xl font-bold text-white mb-2">Free AI Relocation Advisor</h3>
+                <p className="text-slate-400 text-sm">
+                  Get instant answers about moving to Mexico, Colombia, Venezuela, or Brazil. Enter your email to start chatting.
+                </p>
               </div>
-            ))}
-            {isLoading && (
-              <div className="flex justify-start">
-                <div className="bg-slate-700 rounded-2xl px-4 py-2">
-                  <div className="flex gap-1">
-                    <div className="w-2 h-2 bg-slate-500 rounded-full animate-bounce" />
-                    <div className="w-2 h-2 bg-slate-500 rounded-full animate-bounce [animation-delay:0.1s]" />
-                    <div className="w-2 h-2 bg-slate-500 rounded-full animate-bounce [animation-delay:0.2s]" />
-                  </div>
-                </div>
-              </div>
-            )}
-            <div ref={messagesEndRef} />
-          </div>
 
-          {/* Email Capture (show after 3 messages) */}
-          {messages.length >= 4 && !emailCaptured && (
-            <div className="px-4 py-2 bg-slate-900/50 border-t border-slate-700">
-              <form onSubmit={handleEmailSubmit} className="flex gap-2">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Get tips via email..."
-                  className="flex-1 bg-slate-700 text-white text-sm rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-amber-500"
-                />
+              <form onSubmit={handleEmailSubmit} className="space-y-3">
+                <div>
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Your name (optional)"
+                    className="w-full bg-slate-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      setEmailError("");
+                    }}
+                    placeholder="Your email *"
+                    className={`w-full bg-slate-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500 ${
+                      emailError ? "ring-2 ring-red-500" : ""
+                    }`}
+                  />
+                  {emailError && <p className="text-red-400 text-sm mt-1">{emailError}</p>}
+                </div>
                 <button
                   type="submit"
-                  className="bg-amber-500 hover:bg-amber-400 text-slate-900 text-sm font-semibold px-3 py-2 rounded-lg transition"
+                  className="w-full bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold py-3 rounded-lg transition"
                 >
-                  Save
+                  Start Chatting →
                 </button>
               </form>
-            </div>
-          )}
 
-          {/* Input */}
-          <form onSubmit={handleSubmit} className="p-4 border-t border-slate-700">
-            <div className="flex gap-2">
-              <input
-                type="text"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask about visas, cost of living, safety..."
-                className="flex-1 bg-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
-                disabled={isLoading}
-              />
-              <button
-                type="submit"
-                disabled={isLoading || !input.trim()}
-                className="bg-amber-500 hover:bg-amber-400 disabled:opacity-50 disabled:cursor-not-allowed text-slate-900 font-bold px-4 rounded-xl transition"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                  />
-                </svg>
-              </button>
+              <p className="text-center text-slate-500 text-xs mt-4">
+                We&apos;ll send occasional tips. Unsubscribe anytime.
+              </p>
             </div>
-          </form>
+          ) : (
+            <>
+              {/* Messages */}
+              <div className="flex-1 overflow-y-auto p-4 space-y-4">
+                {messages.map((msg, i) => (
+                  <div
+                    key={i}
+                    className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
+                  >
+                    <div
+                      className={`max-w-[80%] rounded-2xl px-4 py-2 ${
+                        msg.role === "user"
+                          ? "bg-amber-500 text-slate-900"
+                          : "bg-slate-700 text-white"
+                      }`}
+                    >
+                      <p className="text-sm whitespace-pre-wrap">{msg.content}</p>
+                    </div>
+                  </div>
+                ))}
+                {isLoading && (
+                  <div className="flex justify-start">
+                    <div className="bg-slate-700 rounded-2xl px-4 py-2">
+                      <div className="flex gap-1">
+                        <div className="w-2 h-2 bg-slate-500 rounded-full animate-bounce" />
+                        <div className="w-2 h-2 bg-slate-500 rounded-full animate-bounce [animation-delay:0.1s]" />
+                        <div className="w-2 h-2 bg-slate-500 rounded-full animate-bounce [animation-delay:0.2s]" />
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <div ref={messagesEndRef} />
+              </div>
+
+              {/* Input */}
+              <form onSubmit={handleSubmit} className="p-4 border-t border-slate-700">
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    placeholder="Ask about visas, cost of living, safety..."
+                    className="flex-1 bg-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                    disabled={isLoading}
+                  />
+                  <button
+                    type="submit"
+                    disabled={isLoading || !input.trim()}
+                    className="bg-amber-500 hover:bg-amber-400 disabled:opacity-50 disabled:cursor-not-allowed text-slate-900 font-bold px-4 rounded-xl transition"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </form>
+            </>
+          )}
         </div>
       )}
     </>
