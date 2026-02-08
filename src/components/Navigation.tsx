@@ -10,6 +10,11 @@ const countries = [
   { name: "Brazil", href: "/brazil", emoji: "🇧🇷" },
 ];
 
+const navLinks = [
+  { name: "Guides", href: "/guides" },
+  { name: "About", href: "/about" },
+];
+
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -39,6 +44,15 @@ export default function Navigation() {
             >
               Blog
             </Link>
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-slate-300 hover:text-amber-400 transition"
+              >
+                {link.name}
+              </Link>
+            ))}
             <Link
               href="/#book"
               className="bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold px-4 py-2 rounded-lg transition"

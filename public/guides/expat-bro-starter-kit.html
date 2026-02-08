@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Expat Bro Starter Kit</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    h1 { font-size: 2.5em; margin-bottom: 0.5em; color: #0f172a; }
+    h2 { font-size: 1.8em; margin-top: 2em; margin-bottom: 0.5em; color: #0f172a; border-bottom: 2px solid #f59e0b; padding-bottom: 0.3em; }
+    h3 { font-size: 1.3em; margin-top: 1.5em; margin-bottom: 0.5em; color: #334155; }
+    p { margin-bottom: 1em; }
+    ul, ol { margin-left: 1.5em; margin-bottom: 1em; }
+    li { margin-bottom: 0.5em; }
+    table { width: 100%; border-collapse: collapse; margin: 1em 0; }
+    th, td { border: 1px solid #e2e8f0; padding: 12px; text-align: left; }
+    th { background: #f8fafc; font-weight: 600; }
+    .header { text-align: center; margin-bottom: 3em; padding-bottom: 2em; border-bottom: 1px solid #e2e8f0; }
+    .subtitle { color: #64748b; font-size: 1.2em; }
+    .author { color: #94a3b8; margin-top: 1em; }
+    .checklist li { list-style: none; margin-left: 0; }
+    .checklist li::before { content: "☐ "; }
+    .warning { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 1em; margin: 1em 0; }
+    .tip { background: #ecfdf5; border-left: 4px solid #10b981; padding: 1em; margin: 1em 0; }
+    .section { page-break-inside: avoid; }
+    .footer { margin-top: 4em; padding-top: 2em; border-top: 1px solid #e2e8f0; text-align: center; color: #94a3b8; font-size: 0.9em; }
+    @media print {
+      body { padding: 20px; }
+      h2 { page-break-before: always; }
+      h2:first-of-type { page-break-before: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🌎 The Expat Bro Starter Kit</h1>
+    <p class="subtitle">Your Quick-Start Guide to Moving to Latin America</p>
+    <p class="author">By Dan Thomson | expatbro.co</p>
+  </div>
+
+  <div class="section">
+    <h2>Introduction</h2>
+    <p>This guide gives you the essentials. The full picture — neighborhood deep-dives, visa walkthroughs, bank account playbooks — is in the Premium Guide. But if you're just getting started, this will point you in the right direction.</p>
+  </div>
+
+  <div class="section">
+    <h2>Pre-Departure Checklist</h2>
+    
+    <h3>Documents</h3>
+    <ul class="checklist">
+      <li>Passport valid for 6+ months beyond your planned stay</li>
+      <li>Digital copies of all important documents (cloud backup)</li>
+      <li>International driver's license (if you plan to drive)</li>
+      <li>Vaccination records</li>
+      <li>Travel insurance documentation</li>
+      <li>Proof of onward travel (some countries require this)</li>
+    </ul>
+
+    <h3>Financial</h3>
+    <ul class="checklist">
+      <li>Notify your bank of travel plans</li>
+      <li>Get a no-foreign-transaction-fee credit card</li>
+      <li>Set up Wise account for international transfers</li>
+      <li>Have $500+ USD cash as emergency backup</li>
+      <li>Know your ATM withdrawal limits</li>
+    </ul>
+
+    <h3>Tech</h3>
+    <ul class="checklist">
+      <li>Unlock your phone for international SIMs</li>
+      <li>Download offline maps (Google Maps, Maps.me)</li>
+      <li>Set up VPN (ExpressVPN or NordVPN)</li>
+      <li>Download translation apps with offline packs</li>
+      <li>Get a portable charger</li>
+    </ul>
+
+    <h3>Health</h3>
+    <ul class="checklist">
+      <li>Get travel health insurance (SafetyWing, World Nomads)</li>
+      <li>Fill prescriptions for 90+ days</li>
+      <li>Get vaccinations (varies by country)</li>
+      <li>Know your blood type</li>
+      <li>Research hospitals in your destination</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Country Comparison</h2>
+    <table>
+      <tr>
+        <th>Factor</th>
+        <th>🇲🇽 Mexico</th>
+        <th>🇨🇴 Colombia</th>
+        <th>🇻🇪 Venezuela</th>
+        <th>🇧🇷 Brazil</th>
+      </tr>
+      <tr>
+        <td><strong>Ease of Entry</strong></td>
+        <td>⭐⭐⭐⭐⭐</td>
+        <td>⭐⭐⭐⭐</td>
+        <td>⭐⭐</td>
+        <td>⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+        <td><strong>Cost of Living</strong></td>
+        <td>⭐⭐⭐</td>
+        <td>⭐⭐⭐⭐</td>
+        <td>⭐⭐⭐⭐⭐</td>
+        <td>⭐⭐⭐</td>
+      </tr>
+      <tr>
+        <td><strong>Safety</strong></td>
+        <td>⭐⭐⭐</td>
+        <td>⭐⭐⭐</td>
+        <td>⭐⭐</td>
+        <td>⭐⭐⭐</td>
+      </tr>
+      <tr>
+        <td><strong>English Spoken</strong></td>
+        <td>⭐⭐⭐</td>
+        <td>⭐⭐</td>
+        <td>⭐</td>
+        <td>⭐⭐</td>
+      </tr>
+      <tr>
+        <td><strong>Internet Quality</strong></td>
+        <td>⭐⭐⭐⭐</td>
+        <td>⭐⭐⭐⭐</td>
+        <td>⭐⭐</td>
+        <td>⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+        <td><strong>Digital Nomad Visa</strong></td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>❌</td>
+        <td>✅</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Visa Overview</h2>
+    
+    <h3>🇲🇽 Mexico</h3>
+    <ul>
+      <li><strong>Tourist:</strong> 180 days on arrival, no visa required</li>
+      <li><strong>Extension:</strong> Visit Migración office before expiration</li>
+      <li><strong>Residency:</strong> Temporary resident visa requires $2,500/mo income proof</li>
+    </ul>
+
+    <h3>🇨🇴 Colombia</h3>
+    <ul>
+      <li><strong>Tourist:</strong> 90 days on arrival, extendable to 180 days</li>
+      <li><strong>Digital Nomad:</strong> 2-year visa, requires $3,000/mo income</li>
+      <li><strong>Extension:</strong> Apply at Migración Colombia before expiration</li>
+    </ul>
+
+    <h3>🇻🇪 Venezuela</h3>
+    <ul>
+      <li><strong>Tourist:</strong> 90 days on arrival for most nationalities</li>
+      <li><strong>Reality:</strong> Banking is complicated, bring USD cash</li>
+    </ul>
+    <div class="warning">⚠️ Check current travel advisories before visiting Venezuela</div>
+
+    <h3>🇧🇷 Brazil</h3>
+    <ul>
+      <li><strong>Tourist:</strong> 90 days on arrival, no visa for Americans</li>
+      <li><strong>Digital Nomad:</strong> 1-year visa, requires $1,500/mo income</li>
+      <li><strong>Extension:</strong> Apply at Federal Police (Polícia Federal)</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Banking Basics</h2>
+    
+    <h3>Before You Leave</h3>
+    <ol>
+      <li>Get a no-foreign-fee credit card (Chase Sapphire, Capital One Venture)</li>
+      <li>Set up Wise account for transfers</li>
+      <li>Have backup cards from different banks</li>
+      <li>Notify banks of travel plans</li>
+    </ol>
+
+    <h3>In-Country Options</h3>
+    <ul>
+      <li><strong>Mexico:</strong> Cash widely accepted, OXXO for bill pay</li>
+      <li><strong>Colombia:</strong> Nequi app works well for foreigners</li>
+      <li><strong>Venezuela:</strong> USD cash is king</li>
+      <li><strong>Brazil:</strong> Nubank, need CPF (tax ID) for most things</li>
+    </ul>
+
+    <div class="tip">💡 <strong>Pro Tip:</strong> Wise gives the best exchange rates and works everywhere</div>
+  </div>
+
+  <div class="section">
+    <h2>Safety Quick Reference</h2>
+    
+    <h3>General Rules</h3>
+    <ol>
+      <li>Don't flash expensive items</li>
+      <li>Use Uber/DiDi instead of street taxis</li>
+      <li>Stay aware of your surroundings</li>
+      <li>Keep phone in pocket, not hand</li>
+      <li>Learn "no thanks" in local language</li>
+    </ol>
+
+    <h3>If Robbed</h3>
+    <ul>
+      <li><strong>Don't resist</strong> — your safety is worth more than stuff</li>
+      <li>Hand over what they want</li>
+      <li>Report to police for insurance purposes</li>
+      <li>Cancel cards immediately</li>
+    </ul>
+
+    <h3>Emergency Numbers</h3>
+    <table>
+      <tr>
+        <td>🇲🇽 Mexico</td>
+        <td><strong>911</strong></td>
+      </tr>
+      <tr>
+        <td>🇨🇴 Colombia</td>
+        <td><strong>123</strong></td>
+      </tr>
+      <tr>
+        <td>🇻🇪 Venezuela</td>
+        <td><strong>171</strong></td>
+      </tr>
+      <tr>
+        <td>🇧🇷 Brazil</td>
+        <td><strong>190</strong> (police) / <strong>192</strong> (ambulance)</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>10 Mistakes to Avoid</h2>
+    <ol>
+      <li><strong>Booking long-term housing before arriving</strong> — Always see it first</li>
+      <li><strong>Overpacking</strong> — You can buy things locally</li>
+      <li><strong>Not learning basic Spanish/Portuguese</strong> — Even a little goes far</li>
+      <li><strong>Using street taxis</strong> — Apps are safer and often cheaper</li>
+      <li><strong>Flashing wealth</strong> — Leave the jewelry at home</li>
+      <li><strong>Ignoring local customs</strong> — Being late is normal, adapt</li>
+      <li><strong>Only hanging with other expats</strong> — You'll miss the real experience</li>
+      <li><strong>Overstaying visas</strong> — Fines and complications aren't worth it</li>
+      <li><strong>Not having backup payment methods</strong> — Cards get blocked</li>
+      <li><strong>Expecting things to work like home</strong> — Embrace the differences</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>Next Steps</h2>
+    <p>This guide covers the basics. For comprehensive neighborhood guides, step-by-step visa applications, bank account playbooks, and much more, check out <strong>The Complete Relocation Bible</strong> at expatbro.co/guides.</p>
+    <p>Or book a strategy call to get personalized advice for your situation:</p>
+    <p><strong>calendly.com/dan-thomson/consult</strong></p>
+  </div>
+
+  <div class="footer">
+    <p>© 2026 Expat Bro | expatbro.co</p>
+    <p>This guide is free to share. Please don't sell it.</p>
+  </div>
+</body>
+</html>
