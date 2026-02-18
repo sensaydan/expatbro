@@ -130,6 +130,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="google-site-verification" content="XNiF3iEdwkK3QiraIul6FaapPWDm-96mHAA9vrR4gpc" />
         <Script
           id="json-ld-website"
           type="application/ld+json"
