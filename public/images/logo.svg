@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" fill="none">
+  <!-- Globe Icon -->
+  <circle cx="25" cy="25" r="20" stroke="#f59e0b" stroke-width="2.5" fill="none"/>
+  <!-- Americas outline simplified -->
+  <path d="M20 10 Q15 15, 18 22 Q16 28, 20 35 Q22 38, 25 40" stroke="#f59e0b" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M30 12 Q35 18, 32 25 Q34 30, 30 36" stroke="#f59e0b" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Latitude lines -->
+  <ellipse cx="25" cy="25" rx="18" ry="6" stroke="#f59e0b" stroke-width="1" fill="none" opacity="0.5"/>
+  <!-- Palm tree accent -->
+  <path d="M42 35 L42 25" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
+  <path d="M42 25 Q38 22, 35 24" stroke="#f59e0b" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M42 25 Q46 22, 49 24" stroke="#f59e0b" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M42 25 Q42 20, 42 18" stroke="#f59e0b" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <!-- Text -->
+  <text x="58" y="33" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="700" fill="#f59e0b">Expat</text>
+  <text x="118" y="33" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="700" fill="white">Bro</text>
+</svg>

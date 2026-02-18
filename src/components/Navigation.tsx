@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const countries = [
@@ -22,8 +23,18 @@ export default function Navigation() {
     <nav className="bg-slate-800/50 backdrop-blur-sm border-b border-slate-700 sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="text-xl font-bold text-amber-400 hover:text-amber-300 transition">
-            🌎 Expat Bro
+          <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition">
+            <Image
+              src="/images/logo-icon.svg"
+              alt="Expat Bro"
+              width={36}
+              height={36}
+              className="w-9 h-9"
+            />
+            <span className="text-xl font-bold">
+              <span className="text-amber-400">Expat</span>
+              <span className="text-white">Bro</span>
+            </span>
           </Link>
 
           {/* Desktop nav */}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -6,7 +7,18 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-amber-400 font-bold mb-4">🌎 Expat Bro</h3>
+            <div className="flex items-center gap-2 mb-4">
+              <Image
+                src="/images/logo-icon.svg"
+                alt="Expat Bro"
+                width={28}
+                height={28}
+              />
+              <span className="font-bold">
+                <span className="text-amber-400">Expat</span>
+                <span className="text-white">Bro</span>
+              </span>
+            </div>
             <p className="text-slate-400 text-sm">
               Real advice on living abroad from someone who&apos;s actually doing it.
             </p>

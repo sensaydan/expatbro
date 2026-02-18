@@ -1,0 +1,2472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Complete Relocation Bible | Expat Bro</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    
+    :root {
+      --amber: #f59e0b;
+      --amber-dark: #d97706;
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-400: #94a3b8;
+      --slate-300: #cbd5e1;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --green: #22c55e;
+      --red: #ef4444;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.7;
+      color: #1e293b;
+      background: #fff;
+    }
+    
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      page-break-after: always;
+    }
+    
+    .cover {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, var(--slate-900), var(--slate-800));
+      color: white;
+      padding: 60px 40px;
+    }
+    
+    .cover h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+    
+    .cover .subtitle {
+      font-size: 1.5rem;
+      color: var(--amber);
+      margin-bottom: 2rem;
+    }
+    
+    .cover .tagline {
+      font-size: 1.1rem;
+      color: var(--slate-400);
+      max-width: 500px;
+    }
+    
+    .cover .author {
+      margin-top: 3rem;
+      font-size: 1rem;
+      color: var(--slate-400);
+    }
+    
+    .cover .author strong {
+      color: white;
+    }
+    
+    .cover .version {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: var(--slate-600);
+    }
+    
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid var(--amber);
+    }
+    
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--slate-800);
+      margin: 2rem 0 1rem;
+    }
+    
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--slate-700);
+      margin: 1.5rem 0 0.75rem;
+    }
+    
+    h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--slate-600);
+      margin: 1rem 0 0.5rem;
+    }
+    
+    p {
+      margin-bottom: 1rem;
+      color: var(--slate-700);
+    }
+    
+    ul, ol {
+      margin: 1rem 0 1.5rem 1.5rem;
+    }
+    
+    li {
+      margin-bottom: 0.5rem;
+      color: var(--slate-700);
+    }
+    
+    .toc {
+      background: var(--slate-100);
+      padding: 2rem;
+      border-radius: 12px;
+    }
+    
+    .toc h2 {
+      margin-top: 0;
+      color: var(--slate-900);
+    }
+    
+    .toc ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .toc > ul > li {
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+      color: var(--slate-800);
+    }
+    
+    .toc ul ul {
+      margin: 0.5rem 0 0.5rem 1.5rem;
+    }
+    
+    .toc ul ul li {
+      font-weight: 400;
+      font-size: 0.95rem;
+      color: var(--slate-600);
+    }
+    
+    .callout {
+      background: var(--slate-100);
+      border-left: 4px solid var(--amber);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .callout.warning {
+      border-left-color: var(--red);
+      background: #fef2f2;
+    }
+    
+    .callout.success {
+      border-left-color: var(--green);
+      background: #f0fdf4;
+    }
+    
+    .callout strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: var(--slate-900);
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+    
+    th, td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--slate-200);
+    }
+    
+    th {
+      background: var(--slate-100);
+      font-weight: 600;
+      color: var(--slate-800);
+    }
+    
+    tr:hover {
+      background: var(--slate-100);
+    }
+    
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+    
+    .checklist li {
+      padding: 0.5rem 0;
+      padding-left: 2rem;
+      position: relative;
+      border-bottom: 1px solid var(--slate-200);
+    }
+    
+    .checklist li:before {
+      content: "☐";
+      position: absolute;
+      left: 0;
+      color: var(--slate-400);
+    }
+    
+    .script {
+      background: var(--slate-800);
+      color: var(--slate-200);
+      padding: 1.5rem;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 0.9rem;
+      margin: 1rem 0;
+      white-space: pre-wrap;
+    }
+    
+    .country-section {
+      background: var(--slate-100);
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+    }
+    
+    .country-section h2 {
+      margin-top: 0;
+    }
+    
+    .flag {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .cost-table {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .neighborhood {
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+    }
+    
+    .neighborhood h4 {
+      margin-top: 0;
+      color: var(--amber-dark);
+    }
+    
+    .rating {
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    
+    .rating.high { background: #dcfce7; color: #166534; }
+    .rating.medium { background: #fef3c7; color: #92400e; }
+    .rating.low { background: #fee2e2; color: #991b1b; }
+    
+    .timeline {
+      border-left: 3px solid var(--amber);
+      margin: 2rem 0;
+      padding-left: 2rem;
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+    
+    .timeline-item:before {
+      content: "";
+      position: absolute;
+      left: -2.4rem;
+      top: 0.25rem;
+      width: 12px;
+      height: 12px;
+      background: var(--amber);
+      border-radius: 50%;
+    }
+    
+    .timeline-item h4 {
+      margin: 0 0 0.5rem;
+      color: var(--amber-dark);
+    }
+    
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--slate-400);
+      font-size: 0.85rem;
+    }
+    
+    @media print {
+      .page {
+        page-break-after: always;
+        padding: 0.5in;
+      }
+      
+      .cover {
+        page-break-after: always;
+      }
+      
+      body {
+        font-size: 11pt;
+      }
+      
+      h1 { font-size: 24pt; }
+      h2 { font-size: 18pt; }
+      h3 { font-size: 14pt; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover">
+  <h1>The Complete<br>Relocation Bible</h1>
+  <p class="subtitle">Mexico • Colombia • Venezuela • Brazil</p>
+  <p class="tagline">
+    Everything you need to successfully relocate to Latin America. 
+    No fluff, no influencer BS — just what actually works.
+  </p>
+  <p class="author">
+    by <strong>Dan Thomson</strong><br>
+    6+ years nomading • 110 countries • Actually lives it
+  </p>
+  <p class="version">Version 1.0 — February 2026</p>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="page">
+  <div class="toc">
+    <h2>📖 Table of Contents</h2>
+    <ul>
+      <li>Part 1: Before You Leave
+        <ul>
+          <li>Chapter 1: The Decision — Is This Right For You?</li>
+          <li>Chapter 2: Pre-Departure Checklist (30 Items)</li>
+          <li>Chapter 3: What to Pack (And What to Leave Behind)</li>
+          <li>Chapter 4: Setting Up Your Digital Life</li>
+          <li>Chapter 5: 10 Mistakes That Will Cost You</li>
+        </ul>
+      </li>
+      <li>Part 2: Country Deep Dives
+        <ul>
+          <li>Chapter 6: Mexico — The Ultimate Base</li>
+          <li>Chapter 7: Colombia — The Hidden Gem</li>
+          <li>Chapter 8: Venezuela — The Road Less Traveled</li>
+          <li>Chapter 9: Brazil — The Giant</li>
+          <li>Chapter 10: Country Comparison Matrix</li>
+        </ul>
+      </li>
+      <li>Part 3: The Practical Stuff
+        <ul>
+          <li>Chapter 11: Visa Playbooks — Step by Step</li>
+          <li>Chapter 12: Finding an Apartment — Scripts Included</li>
+          <li>Chapter 13: Banking & Money — The Real Guide</li>
+          <li>Chapter 14: Cost of Living — Actual Numbers</li>
+          <li>Chapter 15: Healthcare — What You Need to Know</li>
+        </ul>
+      </li>
+      <li>Part 4: Building Your Life
+        <ul>
+          <li>Chapter 16: Safety — Street Smarts That Work</li>
+          <li>Chapter 17: Learning the Language — Be Realistic</li>
+          <li>Chapter 18: Dating & Social — The Honest Truth</li>
+          <li>Chapter 19: Building a Social Circle</li>
+          <li>Chapter 20: Taxes & Legal — Don't Get Screwed</li>
+        </ul>
+      </li>
+      <li>Part 5: Your First Year
+        <ul>
+          <li>Chapter 21: Month-by-Month Timeline</li>
+          <li>Chapter 22: When Things Go Wrong</li>
+          <li>Chapter 23: Long-Term Residency Paths</li>
+        </ul>
+      </li>
+      <li>Appendices
+        <ul>
+          <li>A: Emergency Contacts by Country</li>
+          <li>B: Useful Apps & Websites</li>
+          <li>C: Spanish/Portuguese Phrase Sheets</li>
+          <li>D: Telegram Community Access</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- PART 1: BEFORE YOU LEAVE -->
+<div class="page">
+  <h1>Part 1: Before You Leave</h1>
+  
+  <h2>Chapter 1: The Decision — Is This Right For You?</h2>
+  
+  <p>Let me be straight with you: Moving to Latin America isn't for everyone. The Instagram posts showing beach sunsets and $5 cocktails don't show the bureaucracy, the cultural adjustment, or the moments when you just want something familiar.</p>
+  
+  <p>I've been doing this for six years. 110 countries. I've met hundreds of people who tried the expat life — some thrived, some crashed and burned within months. The difference? Knowing what you're getting into.</p>
+  
+  <h3>You'll Probably Love It If:</h3>
+  <ul>
+    <li><strong>You're adaptable.</strong> Plans change. Things don't work the way you expect. The ability to roll with it is everything.</li>
+    <li><strong>You're self-sufficient.</strong> You can't rely on customer service culture. You solve your own problems.</li>
+    <li><strong>You're curious about other cultures.</strong> Not just tolerating them — genuinely interested.</li>
+    <li><strong>You have location-independent income.</strong> Or savings. The job market for foreigners is limited.</li>
+    <li><strong>You're running toward something, not just away.</strong> Escaping a bad situation is fine, but having a positive vision helps.</li>
+  </ul>
+  
+  <h3>You'll Probably Struggle If:</h3>
+  <ul>
+    <li><strong>You expect first-world efficiency.</strong> Things move slower. Accept it or suffer.</li>
+    <li><strong>You're not willing to learn any Spanish/Portuguese.</strong> English gets you by in tourist areas, but that's not really living there.</li>
+    <li><strong>You need predictability.</strong> Latin America runs on its own clock. Literally.</li>
+    <li><strong>You're highly risk-averse.</strong> There's more chaos, more uncertainty. That's part of the adventure.</li>
+    <li><strong>You can't handle being the outsider.</strong> You will always be a foreigner, even after years.</li>
+  </ul>
+  
+  <div class="callout">
+    <strong>🎯 The Real Test</strong>
+    Before committing, do a 1-month trip. Not in a resort — get an Airbnb in a normal neighborhood, take public transport, shop at local markets. If you love it after a month of actual living (not vacationing), you're ready.
+  </div>
+  
+  <h3>The Mindset Shift</h3>
+  
+  <p>In North America and Europe, systems are designed to be efficient. Things work. Customer service exists. When something breaks, you complain and it gets fixed.</p>
+  
+  <p>In Latin America, you need what I call "gringo zen." Things will go wrong. Your internet will cut out during an important call. Your landlord will vanish for a week. The government office will require a document they didn't mention.</p>
+  
+  <p>You have two choices: rage against the inefficiency (and burn out), or develop patience and problem-solving skills that will serve you for life.</p>
+  
+  <p>I've watched high-powered executives crumble because they couldn't handle a 30-minute wait at the bank. I've watched chill backpackers thrive because they found the absurdity entertaining rather than infuriating.</p>
+  
+  <h3>Your "Why" Matters</h3>
+  
+  <p>Why do you want to do this? Be honest.</p>
+  
+  <ul>
+    <li><strong>Lower cost of living?</strong> Valid. You'll live better for less. But the savings aren't as dramatic as YouTube gurus claim.</li>
+    <li><strong>Adventure and travel?</strong> Valid. Latin America is a launchpad to explore an entire hemisphere.</li>
+    <li><strong>Dating opportunities?</strong> Let's be real — it's a factor for many. We'll cover this honestly later.</li>
+    <li><strong>Escaping winter?</strong> Valid. Permanent sunshine changes your mental health.</li>
+    <li><strong>Political/social escape?</strong> Valid. Different problems, different freedoms.</li>
+    <li><strong>Career break or remote work?</strong> Valid. Best time to try new things.</li>
+  </ul>
+  
+  <p>There's no wrong answer, but knowing your motivation helps you choose the right destination and set realistic expectations.</p>
+</div>
+
+<div class="page">
+  <h2>Chapter 2: Pre-Departure Checklist (30 Items)</h2>
+  
+  <p>This is the checklist I wish I had before my first move. Do these before you leave — some are annoying, but future you will thank present you.</p>
+  
+  <h3>Documents & Identity (1-3 months before)</h3>
+  <ul class="checklist">
+    <li><strong>Passport validity check:</strong> Must be valid for 6+ months after your planned return (most countries require this)</li>
+    <li><strong>Make passport copies:</strong> Physical copies and digital (store in cloud + encrypted USB)</li>
+    <li><strong>Apostille important documents:</strong> Birth certificate, degree, marriage/divorce if applicable — some countries require apostilles for residency applications</li>
+    <li><strong>International driver's license:</strong> Get from AAA ($20) — not required everywhere but useful</li>
+    <li><strong>Photo copies:</strong> Get 10+ passport photos in the standard size (you'll need them for various bureaucracy)</li>
+  </ul>
+  
+  <h3>Finances (1-2 months before)</h3>
+  <ul class="checklist">
+    <li><strong>Get a no-foreign-fee debit card:</strong> Charles Schwab or Wise are best — reimburse ATM fees worldwide</li>
+    <li><strong>Get a no-foreign-fee credit card:</strong> Chase Sapphire, Capital One Venture, or similar — for purchase protection</li>
+    <li><strong>Set up Wise (TransferWise):</strong> Essential for moving money between currencies cheaply</li>
+    <li><strong>Notify your banks:</strong> Tell them you're traveling or they'll freeze your cards</li>
+    <li><strong>Reduce recurring expenses:</strong> Cancel subscriptions you won't use, pause gym memberships</li>
+    <li><strong>Set up online banking:</strong> Make sure you can do everything digitally</li>
+    <li><strong>Check your credit report:</strong> Fix any issues before you leave (harder to dispute abroad)</li>
+  </ul>
+  
+  <h3>Health (1-2 months before)</h3>
+  <ul class="checklist">
+    <li><strong>Doctor visit:</strong> General checkup, stock up on prescriptions (3-6 month supply)</li>
+    <li><strong>Dentist visit:</strong> Get everything done — dental work abroad is cheap but not always reliable</li>
+    <li><strong>Eye exam:</strong> Update prescriptions, get backup glasses/contacts</li>
+    <li><strong>Vaccinations:</strong> Check CDC recommendations for your destination (Hepatitis A/B, Typhoid, Yellow Fever for some areas)</li>
+    <li><strong>Travel insurance:</strong> Get a policy that covers medical evacuation — SafetyWing or World Nomads are popular for long-term travelers</li>
+    <li><strong>Prescription letters:</strong> Get a doctor's letter for any medications you're carrying (especially controlled substances)</li>
+  </ul>
+  
+  <h3>Technology & Communication (2-4 weeks before)</h3>
+  <ul class="checklist">
+    <li><strong>Unlock your phone:</strong> Call your carrier — you need an unlocked phone for local SIMs</li>
+    <li><strong>Download offline maps:</strong> Google Maps and Maps.me for all destinations</li>
+    <li><strong>Get a VPN:</strong> ExpressVPN or NordVPN — essential for accessing home content and security on public WiFi</li>
+    <li><strong>Set up Google Voice/Skype number:</strong> Keep a US/UK number for bank verifications, etc.</li>
+    <li><strong>Password manager:</strong> Get 1Password or Bitwarden if you don't have one</li>
+    <li><strong>Back up everything:</strong> Laptop to cloud, phone to cloud — assume your devices could get stolen</li>
+  </ul>
+  
+  <h3>Home Base (2-4 weeks before)</h3>
+  <ul class="checklist">
+    <li><strong>Mail forwarding:</strong> Use a virtual mailbox service (US Global Mail, Anytime Mailbox)</li>
+    <li><strong>Bills on autopay:</strong> Any recurring payments should be automatic</li>
+    <li><strong>Storage or sell:</strong> Decide what to do with your stuff — storage costs add up, selling is liberating</li>
+    <li><strong>Give someone power of attorney:</strong> A trusted person who can handle emergencies</li>
+    <li><strong>File taxes strategy:</strong> Talk to an accountant about Foreign Earned Income Exclusion (US) or departure taxes (varies by country)</li>
+    <li><strong>Cancel or pause unused services:</strong> Cable, utilities, subscriptions</li>
+  </ul>
+  
+  <div class="callout success">
+    <strong>✅ Pro Tip</strong>
+    Create a "digital go bag" folder: passport scan, insurance info, emergency contacts, important passwords, bank numbers, embassy addresses. Store it encrypted in the cloud. You'll access it more than you expect.
+  </div>
+</div>
+
+<div class="page">
+  <h2>Chapter 3: What to Pack (And What to Leave Behind)</h2>
+  
+  <p>The biggest mistake first-time expats make? Packing like they're moving, not traveling. You can buy almost anything in Latin America. Pack light, buy local.</p>
+  
+  <h3>The Philosophy: One Bag If Possible</h3>
+  
+  <p>I travel with a 40L backpack and a personal item. That's it. I've done this for years. It forces discipline and keeps you mobile. If you can't do one bag, limit yourself to one checked bag + one carry-on.</p>
+  
+  <h3>Essentials — Don't Leave Without These</h3>
+  <table>
+    <tr><th>Item</th><th>Why</th><th>Notes</th></tr>
+    <tr><td>Unlocked smartphone</td><td>Your lifeline</td><td>Get a waterproof case</td></tr>
+    <tr><td>Laptop</td><td>Work/admin</td><td>Consider a cheap Chromebook as backup</td></tr>
+    <tr><td>Universal adapter</td><td>Different outlets</td><td>Type A/B (Americas) but bring universal</td></tr>
+    <tr><td>Noise-canceling headphones</td><td>Sanity saver</td><td>Buses, hostels, noisy apartments</td></tr>
+    <tr><td>Physical credit cards (2+)</td><td>Redundancy</td><td>Visa and Mastercard from different banks</td></tr>
+    <tr><td>$200 USD cash</td><td>Emergency fund</td><td>Hidden in different spots</td></tr>
+    <tr><td>Prescription meds (3-6 months)</td><td>Not always available</td><td>With doctor's letter</td></tr>
+    <tr><td>Quality padlock</td><td>Hostels, lockers, bags</td><td>TSA-approved if checking bags</td></tr>
+  </table>
+  
+  <h3>Clothing Strategy</h3>
+  <p>The rule: if you can buy it there for cheap, don't pack it. Latin America is hot — you don't need much.</p>
+  
+  <table>
+    <tr><th>Pack</th><th>Buy There</th></tr>
+    <tr><td>5-7 t-shirts (quick-dry preferred)</td><td>Beach clothes, flip flops</td></tr>
+    <tr><td>2 pairs shorts</td><td>Cheap sunglasses</td></tr>
+    <tr><td>1 pair jeans or chinos</td><td>Hats, swimwear</td></tr>
+    <tr><td>1 light jacket/hoodie</td><td>Any trendy local clothes</td></tr>
+    <tr><td>7 pairs underwear</td><td>Basic toiletries</td></tr>
+    <tr><td>Walking shoes + sandals</td><td>Souvenirs you'll regret buying</td></tr>
+    <tr><td>One "nice" outfit</td><td></td></tr>
+  </table>
+  
+  <h3>What Most People Overpack</h3>
+  <ul>
+    <li><strong>Books:</strong> Get a Kindle. Physical books are heavy and you can't resell English books easily.</li>
+    <li><strong>Toiletries:</strong> You can buy shampoo in Mexico, I promise.</li>
+    <li><strong>Clothes for every scenario:</strong> You'll wear the same 5 things. Pack less, wash more.</li>
+    <li><strong>Gear "just in case":</strong> Hiking boots, snorkel gear, etc. — rent or buy when you need it.</li>
+    <li><strong>Sentimental items:</strong> Leave them at home. They'll get lost, stolen, or damaged.</li>
+  </ul>
+  
+  <h3>What People Forget</h3>
+  <ul>
+    <li><strong>Sunscreen:</strong> Expensive in Latin America. Bring enough for a month.</li>
+    <li><strong>Specific medications:</strong> Allergy meds, ibuprofen brands you trust, vitamins.</li>
+    <li><strong>Quality sunglasses:</strong> Polarized, UV protection — you'll regret cheap ones.</li>
+    <li><strong>Microfiber towel:</strong> Quick-dry, packable. Many Airbnbs have limited towels.</li>
+    <li><strong>Earplugs + sleep mask:</strong> For buses, hostels, noisy neighborhoods.</li>
+    <li><strong>Physical photos of family:</strong> For those lonely moments. Or just have them on your phone.</li>
+  </ul>
+  
+  <div class="callout warning">
+    <strong>⚠️ Warning: Don't Pack These</strong>
+    Anything that screams "rob me" — flashy jewelry, designer bags, expensive watches. Leave them at home or sell them. You're trying to blend in, not stand out.
+  </div>
+</div>
+
+<div class="page">
+  <h2>Chapter 4: Setting Up Your Digital Life</h2>
+  
+  <p>Your phone and laptop are now your office, bank, entertainment center, and social life. Set them up properly before you leave.</p>
+  
+  <h3>Essential Apps</h3>
+  
+  <h4>Communication</h4>
+  <ul>
+    <li><strong>WhatsApp:</strong> THE app in Latin America. Everyone uses it. Get comfortable with voice messages.</li>
+    <li><strong>Telegram:</strong> Backup + group chats + channels</li>
+    <li><strong>Google Voice / Skype:</strong> Keep a home country number for bank verifications</li>
+  </ul>
+  
+  <h4>Money</h4>
+  <ul>
+    <li><strong>Wise (TransferWise):</strong> Best exchange rates, multi-currency account, debit card</li>
+    <li><strong>Your bank apps:</strong> Make sure they work internationally</li>
+    <li><strong>PayPal:</strong> Backup payment method</li>
+    <li><strong>Crypto wallet (optional):</strong> Useful in places like Venezuela/Argentina with currency issues</li>
+  </ul>
+  
+  <h4>Navigation</h4>
+  <ul>
+    <li><strong>Google Maps:</strong> Download offline maps for your destinations</li>
+    <li><strong>Maps.me:</strong> Great offline backup</li>
+    <li><strong>Uber/Didi/Cabify:</strong> Varies by country — check which works where</li>
+    <li><strong>Rappi/iFood:</strong> Food delivery apps (varies by country)</li>
+  </ul>
+  
+  <h4>Translation</h4>
+  <ul>
+    <li><strong>Google Translate:</strong> Download offline language packs. Camera translation is magic.</li>
+    <li><strong>DeepL:</strong> Better for complex translations</li>
+  </ul>
+  
+  <h4>Language Learning</h4>
+  <ul>
+    <li><strong>Duolingo:</strong> Free, gamified basics</li>
+    <li><strong>Pimsleur:</strong> Audio-focused, great for pronunciation</li>
+    <li><strong>italki:</strong> Cheap 1-on-1 tutoring with native speakers</li>
+  </ul>
+  
+  <h4>Security</h4>
+  <ul>
+    <li><strong>VPN:</strong> ExpressVPN or NordVPN — for security and accessing geo-restricted content</li>
+    <li><strong>1Password / Bitwarden:</strong> Password manager (essential)</li>
+    <li><strong>Google Authenticator / Authy:</strong> 2FA for everything</li>
+  </ul>
+  
+  <h4>Travel</h4>
+  <ul>
+    <li><strong>Booking.com / Airbnb:</strong> Short-term accommodation</li>
+    <li><strong>Skyscanner / Google Flights:</strong> Flight comparison</li>
+    <li><strong>Rome2Rio:</strong> How to get from A to B</li>
+    <li><strong>TrustedHousesitters / Workaway:</strong> Free accommodation options</li>
+  </ul>
+  
+  <h3>Security Essentials</h3>
+  
+  <p>Your digital security is now as important as your physical security.</p>
+  
+  <ul>
+    <li><strong>Enable 2FA on everything:</strong> Email, banking, social media. No exceptions.</li>
+    <li><strong>Use unique passwords:</strong> This is what the password manager is for.</li>
+    <li><strong>Encrypt your laptop:</strong> FileVault (Mac) or BitLocker (Windows). If it's stolen, your data is safe.</li>
+    <li><strong>Regular backups:</strong> Cloud backup for everything important. Assume your laptop could vanish.</li>
+    <li><strong>Be paranoid on public WiFi:</strong> Always use VPN. Or just use your phone hotspot.</li>
+  </ul>
+  
+  <div class="callout">
+    <strong>📱 SIM Card Strategy</strong>
+    When you arrive, get a local SIM immediately at the airport. You'll need local WhatsApp for almost everything. Data is cheap in Latin America ($10-20/month for plenty of data). Keep your home SIM in your backup phone for emergencies.
+  </div>
+</div>
+
+<div class="page">
+  <h2>Chapter 5: 10 Mistakes That Will Cost You</h2>
+  
+  <p>I've watched hundreds of people attempt the expat life. These are the mistakes I see over and over. Avoid them.</p>
+  
+  <h3>1. Not Learning Any Spanish/Portuguese</h3>
+  <p>You don't need to be fluent. But "I'll just use Google Translate" is a recipe for isolation and getting ripped off. Basic conversational ability changes everything — people treat you differently, doors open, you feel less like a tourist.</p>
+  <p><strong>Fix:</strong> Get to A2/B1 level before you go, or intensively once you arrive. 2-3 months of daily practice is enough for basics.</p>
+  
+  <h3>2. Signing a Long-Term Lease Too Fast</h3>
+  <p>That neighborhood seemed great when you visited for a week. After a month, you realize it's far from everything, noisy at night, or just doesn't vibe with you. Now you're locked in for a year.</p>
+  <p><strong>Fix:</strong> Airbnb for the first month. Walk the neighborhood at different times. Then sign a 3-month lease max. Then go longer.</p>
+  
+  <h3>3. Flashing Money and Electronics</h3>
+  <p>Yes, you have an iPhone. No, you don't need to use it on the street in sketchy areas. Petty crime is opportunistic — don't make yourself a target.</p>
+  <p><strong>Fix:</strong> Blend in. No jewelry, use an old phone outside, split your cash into multiple spots.</p>
+  
+  <h3>4. Only Hanging Out With Other Expats</h3>
+  <p>The expat bubble is comfortable. But you didn't move to Colombia to hang out with other Americans complaining about local inefficiency. You'll learn nothing, improve your Spanish never, and miss the point.</p>
+  <p><strong>Fix:</strong> Force yourself into local situations. Take salsa classes at a local studio, not an expat-oriented one. Join a local gym. Date locals.</p>
+  
+  <h3>5. Not Having Health Insurance</h3>
+  <p>"Healthcare is cheap here, I'll just pay out of pocket." Then you break your leg, need surgery, and it's $15,000. Or you get seriously ill and need medical evacuation — that's $50,000+.</p>
+  <p><strong>Fix:</strong> SafetyWing or World Nomads for travel insurance. Local insurance if you're settling long-term. This is not optional.</p>
+  
+  <h3>6. Underestimating Bureaucracy</h3>
+  <p>That visa extension? It'll take 3x longer than the official time. That bank account? You'll visit the branch 4 times. Accept this reality.</p>
+  <p><strong>Fix:</strong> Build in buffer time for everything official. Start processes early. Have your documents ready in triplicate. Be patient but persistent.</p>
+  
+  <h3>7. Burning Through Savings</h3>
+  <p>"It's so cheap here!" is how people justify lifestyle inflation. Yes, it's cheaper than NYC. That doesn't mean you should eat out every meal, take Ubers everywhere, and party every weekend.</p>
+  <p><strong>Fix:</strong> Set a monthly budget BEFORE you arrive. Track expenses. Live like you plan to stay, not like you're on vacation.</p>
+  
+  <h3>8. Ignoring Local Laws and Customs</h3>
+  <p>You're a guest in someone else's country. Their rules apply, even if they seem dumb to you. This is especially important around drugs — Latin American prisons are not fun.</p>
+  <p><strong>Fix:</strong> Research local laws. Be respectful of customs. When in doubt, follow local lead.</p>
+  
+  <h3>9. No Backup Plan</h3>
+  <p>Your card gets blocked, your laptop dies, your Airbnb cancels last minute. What do you do?</p>
+  <p><strong>Fix:</strong> Always have backup: second card from different bank, backup phone, emergency cash, friend/family who can help remotely.</p>
+  
+  <h3>10. Expecting Home</h3>
+  <p>It's different here. That's the point. If you wanted everything to work like home, you should have stayed home. Complaining that "things are so disorganized" or "people are always late" will make you miserable and everyone else annoyed.</p>
+  <p><strong>Fix:</strong> Embrace the difference. Find what you love about it. The chaos is part of the adventure.</p>
+  
+  <div class="callout success">
+    <strong>✅ The Meta-Lesson</strong>
+    Most mistakes come from treating this like an extended vacation instead of a life transition. The mindset shift from "tourist" to "resident" is the most important thing you'll do.
+  </div>
+</div>
+
+<!-- PART 2: COUNTRY DEEP DIVES -->
+<div class="page">
+  <h1>Part 2: Country Deep Dives</h1>
+  
+  <div class="country-section">
+    <div class="flag">🇲🇽</div>
+    <h2>Chapter 6: Mexico — The Ultimate Base</h2>
+    
+    <p>If you're American, Mexico is the easy mode of Latin American relocation. Same timezone (ish), 3-hour flights from most US cities, established expat infrastructure, and a 6-month tourist visa that's trivially renewable.</p>
+    
+    <h3>Why Mexico?</h3>
+    <table>
+      <tr><th>Pros</th><th>Cons</th></tr>
+      <tr><td>Easy visa (180 days, renewable)</td><td>Cartel violence in some areas</td></tr>
+      <tr><td>Close to US/Canada</td><td>Gets "discovered" = rising prices</td></tr>
+      <tr><td>Great food scene</td><td>Some areas very touristy</td></tr>
+      <tr><td>Strong digital nomad community</td><td>Peso has strengthened significantly</td></tr>
+      <tr><td>Excellent healthcare</td><td>Air quality issues in CDMX</td></tr>
+      <tr><td>Rich culture and history</td><td>Can feel too easy/comfortable</td></tr>
+    </table>
+    
+    <h3>Best Cities for Expats</h3>
+    
+    <div class="neighborhood">
+      <h4>🏙️ Mexico City (CDMX)</h4>
+      <p><span class="rating high">Best For: Remote Workers / Culture / Food</span></p>
+      <p>The big one. 22 million people, world-class food scene, affordable luxury, incredible culture. The altitude (7,300 ft) takes adjustment, and the air quality varies. But if you want a real city with real culture at a fraction of NYC prices, this is it.</p>
+      <p><strong>Cost of living:</strong> $1,500-3,000/month for comfortable life</p>
+      <p><strong>Best neighborhoods:</strong> Roma Norte, Condesa, Coyoacán, Del Valle</p>
+    </div>
+    
+    <div class="neighborhood">
+      <h4>🌊 Playa del Carmen</h4>
+      <p><span class="rating medium">Best For: Beach Life / Nightlife / Beginners</span></p>
+      <p>The beach option. Caribbean water, party scene, well-established gringo infrastructure. It's touristy and not very "Mexican," but that's a feature for some people. Great base for exploring cenotes and Mayan ruins.</p>
+      <p><strong>Cost of living:</strong> $1,200-2,500/month</p>
+      <p><strong>Watch out for:</strong> The "Quinta Avenida" bubble, overpriced restaurants, timeshare scammers</p>
+    </div>
+    
+    <div class="neighborhood">
+      <h4>🎨 Oaxaca</h4>
+      <p><span class="rating high">Best For: Culture / Art / Food / Slower Pace</span></p>
+      <p>The cultural heart of Mexico. Best food in the country (arguably), mezcal capital, indigenous traditions alive and well. Smaller, more relaxed, cheaper. Great for people who want depth over convenience.</p>
+      <p><strong>Cost of living:</strong> $1,000-2,000/month</p>
+      <p><strong>Best neighborhoods:</strong> Centro, Jalatlaco, Xochimilco</p>
+    </div>
+    
+    <div class="neighborhood">
+      <h4>🏭 Guadalajara</h4>
+      <p><span class="rating high">Best For: Tech / Entrepreneurship / Real Mexico</span></p>
+      <p>Mexico's second city. Tech hub, tequila country, less touristy than other options. If you want to be in a major Mexican city without the CDMX chaos or the Gringo Trail, this is your spot.</p>
+      <p><strong>Cost of living:</strong> $1,200-2,500/month</p>
+      <p><strong>Best neighborhoods:</strong> Americana, Providencia, Chapultepec</p>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+  <h3>Mexico City: Neighborhood Deep Dive</h3>
+  
+  <div class="neighborhood">
+    <h4>Roma Norte</h4>
+    <p>The expat epicenter. Beautiful Porfirian architecture, tree-lined streets, endless coffee shops and restaurants. Walk everywhere, stumble into art galleries, feel like you're in the best parts of Brooklyn or East London — but with better weather and lower prices.</p>
+    <ul>
+      <li><strong>Rent:</strong> $800-1,500/month for a nice 1BR</li>
+      <li><strong>Vibe:</strong> Young professionals, digital nomads, artists</li>
+      <li><strong>Safety:</strong> <span class="rating high">High</span> (use normal precautions)</li>
+      <li><strong>Walkability:</strong> ⭐⭐⭐⭐⭐</li>
+      <li><strong>Watch out for:</strong> Getting gringo-priced, loud Friday nights</li>
+    </ul>
+  </div>
+  
+  <div class="neighborhood">
+    <h4>Condesa</h4>
+    <p>Roma's slightly calmer sibling. More parks (Parque México is gorgeous), similar vibe but a bit more residential. Popular with families and older nomads who want nice without crazy.</p>
+    <ul>
+      <li><strong>Rent:</strong> $900-1,600/month</li>
+      <li><strong>Vibe:</strong> Leafy, chill, dog parks</li>
+      <li><strong>Safety:</strong> <span class="rating high">High</span></li>
+      <li><strong>Walkability:</strong> ⭐⭐⭐⭐⭐</li>
+    </ul>
+  </div>
+  
+  <div class="neighborhood">
+    <h4>Coyoacán</h4>
+    <p>Further south, more Mexican feel. Frida Kahlo's neighborhood. Colonial center, street food, weekend markets. Less gringo, more authentic, but less convenient for nightlife.</p>
+    <ul>
+      <li><strong>Rent:</strong> $600-1,200/month</li>
+      <li><strong>Vibe:</strong> Bohemian, artsy, families</li>
+      <li><strong>Safety:</strong> <span class="rating high">High</span></li>
+      <li><strong>Walkability:</strong> ⭐⭐⭐ (metro access good)</li>
+    </ul>
+  </div>
+  
+  <div class="neighborhood">
+    <h4>Polanco</h4>
+    <p>The fancy neighborhood. Like moving to Manhattan's Upper East Side. Best restaurants, safest streets, highest prices. Where Mexican old money and international executives live.</p>
+    <ul>
+      <li><strong>Rent:</strong> $1,500-3,000/month</li>
+      <li><strong>Vibe:</strong> Upscale, polished, business</li>
+      <li><strong>Safety:</strong> <span class="rating high">Highest</span></li>
+      <li><strong>Walkability:</strong> ⭐⭐⭐⭐</li>
+    </ul>
+  </div>
+  
+  <h3>Neighborhoods to Avoid</h3>
+  <p>This isn't comprehensive, but as a newcomer, stay away from: Tepito (famous market but highest crime), Doctores, Guerrero, parts of Iztapalapa, most areas labeled "pueblo" far from metro lines. If rent seems too cheap to be true, research why.</p>
+  
+  <h3>The Visa Situation</h3>
+  <p>Mexico gives you 180 days on a tourist visa (FMM) — the exact duration is up to the immigration officer, but most people get 180. When it expires, most people do a "border run" to Guatemala or fly home, then return for another 180 days.</p>
+  
+  <p>For longer stays:</p>
+  <ul>
+    <li><strong>Temporary Resident (1-4 years):</strong> Requires proof of income (~$2,500/month) or savings (~$43,000). Can work with a work permit.</li>
+    <li><strong>Permanent Resident:</strong> After 4 years of temporary, or by showing higher income/savings. Full work rights.</li>
+  </ul>
+  
+  <div class="callout">
+    <strong>🎯 The Move</strong>
+    Fly into CDMX. Airbnb in Roma Norte for a month. Explore, feel the vibe, learn the neighborhood rhythm. Then decide if Mexico is your country, and if CDMX is your city.
+  </div>
+</div>
+
+<div class="page">
+  <div class="country-section">
+    <div class="flag">🇨🇴</div>
+    <h2>Chapter 7: Colombia — The Hidden Gem</h2>
+    
+    <p>Colombia is what Mexico was 10 years ago: incredible value, less discovered, maximum adventure. It's also more challenging — rougher edges, more Spanish required, less established infrastructure. For many, that's exactly the point.</p>
+    
+    <h3>Why Colombia?</h3>
+    <table>
+      <tr><th>Pros</th><th>Cons</th></tr>
+      <tr><td>Best weather on earth (Medellín)</td><td>Still has security issues in parts</td></tr>
+      <tr><td>Lower cost than Mexico</td><td>Less English spoken</td></tr>
+      <tr><td>Digital Nomad Visa available</td><td>Further from US (4+ hour flights)</td></tr>
+      <tr><td>Beautiful, diverse landscapes</td><td>Banking system is annoying</td></tr>
+      <tr><td>Warmest, friendliest people</td><td>Bureaucracy is tough</td></tr>
+      <tr><td>Less touristy than Mexico</td><td>Reputation still affects family opinions</td></tr>
+    </table>
+    
+    <h3>Best Cities for Expats</h3>
+    
+    <div class="neighborhood">
+      <h4>🌸 Medellín</h4>
+      <p><span class="rating high">Best For: Weather / Lifestyle / Nomads</span></p>
+      <p>The "City of Eternal Spring" lives up to its name. Perfect 70-80°F year-round, modern metro, emerging tech scene, incredible value. The narco past is real but increasingly distant — the city has transformed remarkably.</p>
+      <p><strong>Cost of living:</strong> $1,200-2,200/month</p>
+      <p><strong>Best neighborhoods:</strong> Poblado, Laureles, Envigado</p>
+    </div>
+    
+    <div class="neighborhood">
+      <h4>🏛️ Bogotá</h4>
+      <p><span class="rating medium">Best For: Business / Culture / Long-term</span></p>
+      <p>The capital, the political/business center. Cold and rainy (8,600 ft altitude), traffic is brutal, but cultural offerings are unmatched. Less touristy, more "real Colombia." Where serious business happens.</p>
+      <p><strong>Cost of living:</strong> $1,400-2,500/month</p>
+      <p><strong>Best neighborhoods:</strong> Chapinero Alto, Usaquén, Zona T</p>
+    </div>
+    
+    <div class="neighborhood">
+      <h4>🏖️ Cartagena</h4>
+      <p><span class="rating medium">Best For: Beach / History / Romance</span></p>
+      <p>The colonial jewel. Stunning walled city, Caribbean vibes, Instagram paradise. Hot as hell (90°F+ and humid year-round). More expensive, more touristy, but undeniably beautiful.</p>
+      <p><strong>Cost of living:</strong> $1,300-2,400/month</p>
+      <p><strong>Best areas:</strong> Getsemaní, Centro, Bocagrande</p>
+    </div>
+    
+    <div class="neighborhood">
+      <h4>💃 Cali</h4>
+      <p><span class="rating high">Best For: Salsa / Nightlife / Locals</span></p>
+      <p>The salsa capital of the world. Fewer expats, more authentic, hotter (literally and figuratively). If you want to really learn salsa and integrate into Colombian culture, Cali is the move.</p>
+      <p><strong>Cost of living:</strong> $1,000-1,800/month</p>
+      <p><strong>Watch out for:</strong> Some neighborhoods have real security issues</p>
+    </div>
+  </div>
+  
+  <h3>The Digital Nomad Visa</h3>
+  <p>Colombia introduced a proper digital nomad visa in 2022. Requirements:</p>
+  <ul>
+    <li>Proof of remote income: ~$3,000/month minimum</li>
+    <li>Health insurance covering Colombia</li>
+    <li>Clean criminal record</li>
+    <li>Valid for 2 years, renewable</li>
+  </ul>
+  <p>This is the cleanest legal path for long-term stays. No more visa runs every 90 days.</p>
+</div>
+
+<div class="page">
+  <h3>Medellín: Neighborhood Deep Dive</h3>
+  
+  <div class="neighborhood">
+    <h4>El Poblado</h4>
+    <p>The gringo epicenter. Most developed, safest, most expensive. Parque Lleras is party central. You'll meet every digital nomad here, for better or worse. Great starting point, but consider moving out once you're settled.</p>
+    <ul>
+      <li><strong>Rent:</strong> $800-1,500/month for a nice apartment</li>
+      <li><strong>Vibe:</strong> International, upscale, easy</li>
+      <li><strong>Safety:</strong> <span class="rating high">Highest in the city</span></li>
+      <li><strong>Walk to:</strong> Malls, gyms, restaurants, coworking spaces</li>
+    </ul>
+  </div>
+  
+  <div class="neighborhood">
+    <h4>Laureles</h4>
+    <p>The alternative to Poblado. More Colombian, more affordable, excellent walkability. Less nightlife, more coffee shops and neighborhoods. Where expats move when they've "graduated" from Poblado.</p>
+    <ul>
+      <li><strong>Rent:</strong> $500-1,000/month</li>
+      <li><strong>Vibe:</strong> Local, relaxed, authentic</li>
+      <li><strong>Safety:</strong> <span class="rating high">Very safe</span></li>
+      <li><strong>Walkability:</strong> ⭐⭐⭐⭐⭐</li>
+    </ul>
+  </div>
+  
+  <div class="neighborhood">
+    <h4>Envigado</h4>
+    <p>Technically a separate municipality, but connected to Medellín. More suburban, very safe, good value. Feels more like living in a real Colombian town.</p>
+    <ul>
+      <li><strong>Rent:</strong> $400-800/month</li>
+      <li><strong>Vibe:</strong> Residential, family-oriented</li>
+      <li><strong>Safety:</strong> <span class="rating high">Excellent</span></li>
+    </ul>
+  </div>
+  
+  <h3>Colombia Reality Check</h3>
+  
+  <p>Colombia is amazing, but let's be honest about the challenges:</p>
+  
+  <ul>
+    <li><strong>Language:</strong> Less English than Mexico. You need Spanish here. Paisa accent (Medellín) is distinct — locals speak fast.</li>
+    <li><strong>Banking:</strong> Opening a Colombian bank account as a foreigner is painful. Many use Nequi or keep money abroad.</li>
+    <li><strong>Dating dynamics:</strong> The reputation precedes you. Be aware that some locals assume gringos are easy money or easy marks.</li>
+    <li><strong>Scams:</strong> Drugging incidents (scopolamine) still happen. Don't accept drinks from strangers, especially in nightlife areas.</li>
+    <li><strong>Political instability:</strong> Protests and strikes happen. Usually peaceful but can disrupt travel.</li>
+  </ul>
+  
+  <div class="callout warning">
+    <strong>⚠️ Security Alert: Scopolamine</strong>
+    "Devil's breath" is real. It's a drug that makes you compliant — victims are robbed, ATMs emptied, sometimes worse. It can be blown in your face, put in drinks, or absorbed through touch. Don't be paranoid, but: don't accept drinks from strangers (even women), don't try drugs from people you just met, if something feels off — leave immediately.
+  </div>
+  
+  <div class="callout success">
+    <strong>✅ Why It's Worth It</strong>
+    Despite the challenges, Colombia offers something hard to find: a place that's still genuinely exciting, where your money goes far, where the people are warm, and where adventure is around every corner. If you want easy, stay in Mexico. If you want alive, try Colombia.
+  </div>
+</div>
+
+<div class="page">
+  <div class="country-section">
+    <div class="flag">🇻🇪</div>
+    <h2>Chapter 8: Venezuela — The Road Less Traveled</h2>
+    
+    <p>Venezuela is the wildcard. A country in crisis, but also incredibly beautiful, absurdly cheap (if you play it right), and completely off the gringo trail. This is for experienced travelers only.</p>
+    
+    <h3>Why Venezuela? (For the Adventurous)</h3>
+    <table>
+      <tr><th>Pros</th><th>Cons</th></tr>
+      <tr><td>Cheapest country in South America</td><td>Economic/political crisis ongoing</td></tr>
+      <tr><td>Stunning natural beauty</td><td>Infrastructure is deteriorating</td></tr>
+      <tr><td>Almost no tourists</td><td>Power outages, water issues</td></tr>
+      <tr><td>Warm, welcoming people</td><td>Safety concerns in cities</td></tr>
+      <tr><td>Caribbean beaches, untouched</td><td>Limited ATM/banking access</td></tr>
+      <tr><td>Real adventure vibes</td><td>Exit options can be limited</td></tr>
+    </table>
+    
+    <h3>The Reality on the Ground (2025-2026)</h3>
+    <p>Venezuela is not the failed state many assume. In major cities, restaurants are open, nightlife exists, and the upper-middle class lives normally. But the contrasts are stark. Much of the population struggles with hyperinflation and shortages.</p>
+    
+    <p>For travelers: you'll experience a country frozen in time, with 1960s American cars, colonial architecture, and prices that make Colombia look expensive. A $20 dinner would feed you for a week here.</p>
+    
+    <h3>How Money Works</h3>
+    <p>The official exchange rate vs. the black market rate creates opportunity (and complexity). You'll use USD cash and exchange locally. Credit cards often don't work. Crypto is increasingly accepted.</p>
+    
+    <h3>Destinations</h3>
+    
+    <div class="neighborhood">
+      <h4>🏖️ Margarita Island</h4>
+      <p>The safe zone for tourists. Caribbean island, duty-free, resort infrastructure (though dated). This is where most travelers start. Beautiful beaches, low crime, accessible.</p>
+    </div>
+    
+    <div class="neighborhood">
+      <h4>🏙️ Caracas</h4>
+      <p>The capital. Dangerous reputation is partly earned — don't wander at night. But also vibrant, cultured, and real. The contrast between wealth and poverty is jarring. Only for experienced travelers who know how to move in challenging cities.</p>
+    </div>
+    
+    <div class="neighborhood">
+      <h4>🏔️ Mérida</h4>
+      <p>The Andes. University town, adventure sports, completely different vibe. Cooler climate, smaller scale, relatively safe. Base for trekking and paragliding.</p>
+    </div>
+    
+    <div class="neighborhood">
+      <h4>🌴 Los Roques</h4>
+      <p>Archipelago of Caribbean paradise. Some of the clearest water in the world. Remote, expensive by Venezuelan standards, worth it for beach lovers.</p>
+    </div>
+    
+    <div class="callout warning">
+      <strong>⚠️ Only If...</strong>
+      Only consider Venezuela if: you're an experienced traveler, you speak Spanish, you're comfortable with uncertainty, you've done research on current conditions (things change fast), and you have reliable local contacts or fixer. This is not a first-expat-experience destination.
+    </div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="country-section">
+    <div class="flag">🇧🇷</div>
+    <h2>Chapter 9: Brazil — The Giant</h2>
+    
+    <p>Brazil is its own universe. A continent-sized country with incredible diversity — beaches, jungles, megacities, and everything in between. Also the most different from the others: Portuguese, not Spanish, and a distinct culture that's less Latin than it is uniquely Brazilian.</p>
+    
+    <h3>Why Brazil?</h3>
+    <table>
+      <tr><th>Pros</th><th>Cons</th></tr>
+      <tr><td>Incredible beaches</td><td>Portuguese, not Spanish</td></tr>
+      <tr><td>Party/nightlife culture</td><td>More dangerous than other options</td></tr>
+      <tr><td>Diverse landscapes</td><td>Expensive compared to Colombia/Mexico</td></tr>
+      <tr><td>Warm, fun-loving people</td><td>Bureaucracy is brutal</td></tr>
+      <tr><td>Strong expat scene in key cities</td><td>Far from US/Europe</td></tr>
+      <tr><td>Emerging tech hubs</td><td>Visa rules stricter</td></tr>
+    </table>
+    
+    <h3>Best Cities for Expats</h3>
+    
+    <div class="neighborhood">
+      <h4>🏙️ São Paulo</h4>
+      <p><span class="rating high">Best For: Business / Nightlife / Culture</span></p>
+      <p>The financial heart of Latin America. 12+ million people, world-class restaurants, insane nightlife. Not beautiful (concrete jungle), but deeply alive. For people who want opportunity over scenery.</p>
+      <p><strong>Cost of living:</strong> $1,800-3,500/month</p>
+      <p><strong>Best neighborhoods:</strong> Jardins, Vila Madalena, Pinheiros</p>
+    </div>
+    
+    <div class="neighborhood">
+      <h4>🏖️ Rio de Janeiro</h4>
+      <p><span class="rating medium">Best For: Beach / Scenery / Lifestyle</span></p>
+      <p>The postcard city. Christ the Redeemer, Copacabana, favelas on hillsides. Beautiful and dangerous in equal measure. The beach lifestyle is real — people here prioritize living well over working hard.</p>
+      <p><strong>Cost of living:</strong> $1,500-3,000/month</p>
+      <p><strong>Best neighborhoods:</strong> Ipanema, Leblon, Botafogo</p>
+    </div>
+    
+    <div class="neighborhood">
+      <h4>🌊 Florianópolis</h4>
+      <p><span class="rating high">Best For: Beach + Safety / Families / Tech</span></p>
+      <p>The island paradise in southern Brazil. 42 beaches, surf culture, emerging tech scene. Safer than Rio, beautiful than São Paulo. European influence makes it feel different from rest of Brazil.</p>
+      <p><strong>Cost of living:</strong> $1,200-2,500/month</p>
+      <p><strong>Best neighborhoods:</strong> Centro, Lagoa da Conceição, Campeche</p>
+    </div>
+    
+    <div class="neighborhood">
+      <h4>☀️ Fortaleza</h4>
+      <p><span class="rating medium">Best For: Beach / Budget / Kitesurfing</span></p>
+      <p>Northeast Brazil. Cheaper, less developed, more rough around edges. Amazing kitesurfing (Cumbuco nearby). Year-round sun. Good if you want beach life on a budget.</p>
+      <p><strong>Cost of living:</strong> $1,000-2,000/month</p>
+    </div>
+  </div>
+  
+  <h3>The Language Barrier</h3>
+  <p>Spanish speakers: you'll understand 60-70% of written Portuguese. Spoken is harder. Portuguese sounds completely different. Don't assume you can just "figure it out" — take Portuguese lessons, at least basics.</p>
+  
+  <h3>The Visa Situation</h3>
+  <p>Americans/Canadians now need a visa for Brazil (as of 2025). 90 days tourist, renewable to 180. For longer stays, look into the investor visa or digital nomad visa (coming soon or recently launched — check current status).</p>
+</div>
+
+<div class="page">
+  <h2>Chapter 10: Country Comparison Matrix</h2>
+  
+  <p>Choose your fighter.</p>
+  
+  <table>
+    <tr>
+      <th>Factor</th>
+      <th>🇲🇽 Mexico</th>
+      <th>🇨🇴 Colombia</th>
+      <th>🇻🇪 Venezuela</th>
+      <th>🇧🇷 Brazil</th>
+    </tr>
+    <tr>
+      <td><strong>Ease of Entry</strong></td>
+      <td>⭐⭐⭐⭐⭐</td>
+      <td>⭐⭐⭐⭐</td>
+      <td>⭐⭐</td>
+      <td>⭐⭐⭐</td>
+    </tr>
+    <tr>
+      <td><strong>Cost of Living</strong></td>
+      <td>$$</td>
+      <td>$</td>
+      <td>$</td>
+      <td>$$$</td>
+    </tr>
+    <tr>
+      <td><strong>Safety</strong></td>
+      <td>Medium</td>
+      <td>Medium</td>
+      <td>Low</td>
+      <td>Low-Medium</td>
+    </tr>
+    <tr>
+      <td><strong>English Spoken</strong></td>
+      <td>Some</td>
+      <td>Little</td>
+      <td>Very Little</td>
+      <td>Some</td>
+    </tr>
+    <tr>
+      <td><strong>Weather</strong></td>
+      <td>Varies</td>
+      <td>Excellent</td>
+      <td>Hot</td>
+      <td>Varies</td>
+    </tr>
+    <tr>
+      <td><strong>Expat Community</strong></td>
+      <td>Large</td>
+      <td>Growing</td>
+      <td>Minimal</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td><strong>Adventure Level</strong></td>
+      <td>Medium</td>
+      <td>High</td>
+      <td>Extreme</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td><strong>Visa Length</strong></td>
+      <td>180 days</td>
+      <td>90 days</td>
+      <td>90 days</td>
+      <td>90 days</td>
+    </tr>
+    <tr>
+      <td><strong>Food Quality</strong></td>
+      <td>⭐⭐⭐⭐⭐</td>
+      <td>⭐⭐⭐</td>
+      <td>⭐⭐</td>
+      <td>⭐⭐⭐⭐</td>
+    </tr>
+    <tr>
+      <td><strong>Nightlife</strong></td>
+      <td>⭐⭐⭐⭐</td>
+      <td>⭐⭐⭐⭐⭐</td>
+      <td>⭐⭐⭐</td>
+      <td>⭐⭐⭐⭐⭐</td>
+    </tr>
+  </table>
+  
+  <h3>My Recommendations</h3>
+  
+  <div class="callout">
+    <strong>🥇 First Timer / Remote Worker:</strong>
+    Start with Mexico. It's the easiest transition. CDMX or Guadalajara for cities, Playa or Oaxaca for beach/culture. Get your feet wet, then expand.
+  </div>
+  
+  <div class="callout">
+    <strong>🥈 Adventure Seeker / Budget Maximizer:</strong>
+    Colombia. Medellín or Cali. Your money goes further, the people are warmer, and there's more to discover. Steeper learning curve but more rewarding.
+  </div>
+  
+  <div class="callout">
+    <strong>🥉 Beach + Nightlife:</strong>
+    Brazil if you have the budget. Rio or Floripa. Colombia if you don't — Cartagena or Santa Marta.
+  </div>
+  
+  <div class="callout warning">
+    <strong>⚠️ Experienced Travelers Only:</strong>
+    Venezuela. Not a recommendation — more of an adventure notice. Go if you know what you're doing and have contacts on the ground.
+  </div>
+  
+  <h3>The Multi-Country Strategy</h3>
+  <p>Many expats don't pick one — they rotate. A common pattern:</p>
+  <ol>
+    <li>6 months in Mexico (visa maxed)</li>
+    <li>Fly to Colombia (90 days, extend to 180)</li>
+    <li>Back to Mexico (reset the visa)</li>
+  </ol>
+  <p>This keeps you legal, provides variety, and lets you experience different cultures without committing to one.</p>
+</div>
+
+<!-- PART 3: THE PRACTICAL STUFF -->
+<div class="page">
+  <h1>Part 3: The Practical Stuff</h1>
+  
+  <h2>Chapter 11: Visa Playbooks — Step by Step</h2>
+  
+  <p>The #1 question I get: "How do I stay legally?" Here's exactly how it works in each country.</p>
+  
+  <h3>🇲🇽 Mexico Visa Playbook</h3>
+  
+  <h4>Tourist Entry (FMM)</h4>
+  <ol>
+    <li>Arrive by air at any international airport</li>
+    <li>Fill out FMM form (now often digital)</li>
+    <li>Immigration stamps you for up to 180 days (ask for it if they default to less)</li>
+    <li>Keep your FMM paper — you need it to leave</li>
+  </ol>
+  
+  <p><strong>The Border Run:</strong> When 180 days expires, fly to Guatemala, Belize, or back home. Stay a few days. Return for another 180 days. Technically you should stay out for 180 days; practically, most people return after a few days with no issues.</p>
+  
+  <h4>Temporary Resident (1-4 years)</h4>
+  <ol>
+    <li>Apply at Mexican consulate in your home country (not from within Mexico)</li>
+    <li>Required: Proof of income (~$2,500/month) or savings (~$43,000) for last 12 months</li>
+    <li>Once approved, enter Mexico and exchange for temporary resident card at INM</li>
+    <li>Renewable annually for up to 4 years</li>
+    <li>Can add work permit if employed by Mexican company</li>
+  </ol>
+  
+  <div class="callout">
+    <strong>💡 Pro Tip</strong>
+    The income requirement is calculated in UMAs (Mexican units). The exact dollar amount changes. Always check the current requirement before applying. Some consulates are stricter than others — smaller consulates often more flexible.
+  </div>
+  
+  <h3>🇨🇴 Colombia Visa Playbook</h3>
+  
+  <h4>Tourist Entry</h4>
+  <ol>
+    <li>Arrive by air — 90 days stamped automatically for most nationalities</li>
+    <li>Extend at Migración Colombia office — another 90 days, $50ish</li>
+    <li>Max 180 days per calendar year on tourist status</li>
+  </ol>
+  
+  <h4>Digital Nomad Visa (Visa V)</h4>
+  <ol>
+    <li>Apply online through Cancillería (Ministry of Foreign Affairs)</li>
+    <li>Requirements:
+      <ul>
+        <li>Proof of remote employment or self-employment (contract, letter)</li>
+        <li>Income: ~$3,000/month minimum (3x minimum wage)</li>
+        <li>Health insurance valid in Colombia</li>
+        <li>Clean background check from home country</li>
+      </ul>
+    </li>
+    <li>Valid for 2 years</li>
+    <li>Can be obtained from within Colombia on tourist status</li>
+  </ol>
+  
+  <h3>🇧🇷 Brazil Visa Playbook</h3>
+  
+  <h4>Tourist Visa (Required for US/Canada)</h4>
+  <ol>
+    <li>Apply online through VFS Global or Brazilian consulate</li>
+    <li>Requires: passport, photo, itinerary, hotel booking, proof of funds</li>
+    <li>90 days, extendable to 180 at Polícia Federal</li>
+    <li>Processing: 2-3 weeks typically</li>
+  </ol>
+  
+  <h4>Investor Visa (VITEM II)</h4>
+  <ol>
+    <li>Invest R$500,000 (~$100,000 USD) in Brazilian business</li>
+    <li>Create jobs for Brazilians (in theory)</li>
+    <li>Path to permanent residency after 4 years</li>
+    <li>Complex — typically requires Brazilian lawyer</li>
+  </ol>
+  
+  <div class="callout warning">
+    <strong>⚠️ Don't Overstay</strong>
+    Overstaying your visa in any country creates problems. Fines, bans, issues with future visas. Not worth it. Plan your extensions in advance.
+  </div>
+</div>
+
+<div class="page">
+  <h2>Chapter 12: Finding an Apartment — Scripts Included</h2>
+  
+  <p>Finding housing as a foreigner without local credit history is one of the biggest challenges. Here's how to navigate it.</p>
+  
+  <h3>The Stages</h3>
+  <ol>
+    <li><strong>Week 1-4: Airbnb/short-term</strong> — Get oriented, explore neighborhoods</li>
+    <li><strong>Month 2-3: Mid-term rental</strong> — 1-3 month furnished places</li>
+    <li><strong>Month 4+: Long-term lease</strong> — Unfurnished, better rates, real commitment</li>
+  </ol>
+  
+  <h3>Where to Search</h3>
+  
+  <h4>Mexico</h4>
+  <ul>
+    <li><strong>Facebook Groups:</strong> "[City] Rentals", "Expats in [City]" — most active</li>
+    <li><strong>Inmuebles24:</strong> Mexican Zillow</li>
+    <li><strong>Dada Room:</strong> Roommates and rooms</li>
+    <li><strong>Walk the neighborhood:</strong> "Se Renta" signs everywhere</li>
+  </ul>
+  
+  <h4>Colombia</h4>
+  <ul>
+    <li><strong>Facebook Groups:</strong> "Medellín Rentals", etc.</li>
+    <li><strong>Finca Raiz:</strong> Main rental site</li>
+    <li><strong>Ciencuadras:</strong> Another major platform</li>
+    <li><strong>Local inmobiliarias:</strong> Real estate agencies handle rentals</li>
+  </ul>
+  
+  <h4>Brazil</h4>
+  <ul>
+    <li><strong>Zap Imóveis / Viva Real:</strong> Main platforms</li>
+    <li><strong>OLX:</strong> More informal/budget</li>
+    <li><strong>Quinto Andar:</strong> Tech-forward, foreigner-friendly</li>
+  </ul>
+  
+  <h3>Negotiation Scripts (Spanish)</h3>
+  
+  <div class="script">
+Initial Contact:
+"Hola, vi su anuncio del departamento en [barrio]. 
+Soy [nombre], trabajo remoto para una empresa de EE.UU./Europa.
+Busco algo para [X meses]. ¿Sigue disponible?"
+
+---
+
+Price Negotiation:
+"Me encanta el lugar, pero está un poco arriba de mi presupuesto.
+¿Hay flexibilidad en el precio si pago [3/6 meses] adelantado?"
+
+---
+
+No Credit Check:
+"Entiendo que normalmente piden aval local.
+Puedo ofrecer [3 meses de depósito] o pagar varios meses adelantado 
+en lugar de un aval. ¿Sería posible?"
+
+---
+
+Closing:
+"Perfecto. ¿Cuáles son los próximos pasos?
+¿Podemos firmar un contrato esta semana?"</div>
+  
+  <h3>Red Flags</h3>
+  <ul>
+    <li>Asking for deposit before viewing</li>
+    <li>No contract or "we don't do contracts"</li>
+    <li>Landlord can't show proof of ownership</li>
+    <li>Price way below market (too good to be true)</li>
+    <li>Pressure to decide immediately</li>
+    <li>Utilities "included" without meter access</li>
+  </ul>
+  
+  <h3>Lease Essentials</h3>
+  <p>Make sure your contract includes:</p>
+  <ul>
+    <li>Exact monthly rent and what's included</li>
+    <li>Deposit amount and return conditions</li>
+    <li>Lease duration and renewal terms</li>
+    <li>Exit clause (ideally 30 days notice)</li>
+    <li>Inventory list of furniture/appliances</li>
+    <li>Landlord's responsibilities (repairs, etc.)</li>
+  </ul>
+  
+  <div class="callout success">
+    <strong>✅ The Power Move</strong>
+    Paying 3-6 months upfront in cash solves most problems. Landlords care about reliable payment more than credit history. If you can offer advance payment, you can negotiate away most requirements.
+  </div>
+</div>
+
+<div class="page">
+  <h2>Chapter 13: Banking & Money — The Real Guide</h2>
+  
+  <p>Moving money, getting paid, and accessing cash as a foreigner — it's not straightforward. Here's what actually works.</p>
+  
+  <h3>The Essential Setup</h3>
+  
+  <h4>Before You Leave</h4>
+  <ul>
+    <li><strong>Charles Schwab debit card:</strong> No foreign transaction fees, reimburses all ATM fees worldwide. This is the gold standard.</li>
+    <li><strong>Wise multi-currency account:</strong> Hold money in USD, EUR, GBP, MXN, etc. Best exchange rates. Debit card included.</li>
+    <li><strong>2-3 credit cards:</strong> No foreign transaction fees. Visa and Mastercard for redundancy (Amex less accepted).</li>
+    <li><strong>PayPal:</strong> Linked to your bank as backup</li>
+  </ul>
+  
+  <h4>In Country</h4>
+  <ul>
+    <li><strong>Local SIM with mobile wallet:</strong> Mercado Pago (Mexico), Nequi/Daviplata (Colombia), PicPay/Nubank (Brazil)</li>
+    <li><strong>Local bank account (if long-term):</strong> Useful but not essential for first year</li>
+    <li><strong>Cash reserve:</strong> Keep $200-500 USD hidden at home for emergencies</li>
+  </ul>
+  
+  <h3>Opening a Local Bank Account</h3>
+  
+  <h4>🇲🇽 Mexico</h4>
+  <p>Relatively easy with temporary/permanent residency. With tourist visa, some banks accept:</p>
+  <ul>
+    <li>Passport + visa stamp</li>
+    <li>Proof of address (utility bill, bank statement sent to local address)</li>
+    <li>RFC (tax ID) — can get as a foreigner</li>
+  </ul>
+  <p><strong>Best options:</strong> BBVA (most expat-friendly), Santander, digital banks like Klar or Albo (easier requirements)</p>
+  
+  <h4>🇨🇴 Colombia</h4>
+  <p>Harder. Most banks require cédula de extranjería (foreigner ID from residency visa). Workarounds:</p>
+  <ul>
+    <li><strong>Nequi:</strong> Digital wallet, sometimes accepts passport only</li>
+    <li><strong>Daviplata:</strong> Similar to Nequi</li>
+    <li><strong>Bancolombia:</strong> Sometimes opens accounts for tourists — varies by branch</li>
+  </ul>
+  
+  <h4>🇧🇷 Brazil</h4>
+  <p>Need CPF (tax number) — relatively easy to get. Then:</p>
+  <ul>
+    <li><strong>Nubank:</strong> Digital bank, very expat-friendly, can open with passport + CPF</li>
+    <li><strong>Inter:</strong> Similar to Nubank</li>
+    <li><strong>Traditional banks:</strong> Harder, usually need residency</li>
+  </ul>
+  
+  <h3>ATM Strategy</h3>
+  <ul>
+    <li>Use bank ATMs inside branches (safer, often higher limits)</li>
+    <li>Withdraw larger amounts less frequently (fewer fees)</li>
+    <li>Always decline "conversion" offers — your bank's rate is better</li>
+    <li>Know your daily limits before you go</li>
+    <li>Have backup card in case one gets eaten</li>
+  </ul>
+  
+  <h3>Sending Money to Yourself</h3>
+  <table>
+    <tr><th>Method</th><th>Speed</th><th>Cost</th><th>Best For</th></tr>
+    <tr><td>Wise</td><td>1-2 days</td><td>~0.5-1%</td><td>Regular transfers</td></tr>
+    <tr><td>Western Union</td><td>Instant</td><td>~3-5%</td><td>Emergencies</td></tr>
+    <tr><td>PayPal</td><td>2-3 days</td><td>~3-4%</td><td>Backup</td></tr>
+    <tr><td>Crypto</td><td>Minutes</td><td>Varies</td><td>Venezuela, tech-savvy</td></tr>
+    <tr><td>Wire transfer</td><td>3-5 days</td><td>$20-50 flat</td><td>Large amounts</td></tr>
+  </table>
+  
+  <div class="callout">
+    <strong>💡 The Wise Trick</strong>
+    Set up Wise before you leave. Get their debit card. You can hold multiple currencies and spend directly, or withdraw cash with better rates than most ATMs offer. It's become essential for expats.
+  </div>
+</div>
+
+<div class="page">
+  <h2>Chapter 14: Cost of Living — Actual Numbers</h2>
+  
+  <p>No bullshit budget breakdowns. These are real numbers from actual expats, not YouTube optimizers claiming to live on $800/month (in Poblado, somehow).</p>
+  
+  <h3>Monthly Budgets by Lifestyle</h3>
+  
+  <h4>🇲🇽 Mexico City</h4>
+  <table class="cost-table">
+    <tr><th>Expense</th><th>Budget</th><th>Comfortable</th><th>Luxury</th></tr>
+    <tr><td>Rent (1BR furnished)</td><td>$600</td><td>$1,000</td><td>$1,800</td></tr>
+    <tr><td>Food (groceries + eating out)</td><td>$300</td><td>$500</td><td>$800</td></tr>
+    <tr><td>Transport</td><td>$30</td><td>$100</td><td>$250</td></tr>
+    <tr><td>Utilities/Internet</td><td>$50</td><td>$80</td><td>$100</td></tr>
+    <tr><td>Entertainment/Social</td><td>$100</td><td>$250</td><td>$500</td></tr>
+    <tr><td>Health Insurance</td><td>$80</td><td>$120</td><td>$200</td></tr>
+    <tr><td>Misc</td><td>$100</td><td>$200</td><td>$400</td></tr>
+    <tr><td><strong>TOTAL</strong></td><td><strong>$1,260</strong></td><td><strong>$2,250</strong></td><td><strong>$4,050</strong></td></tr>
+  </table>
+  
+  <h4>🇨🇴 Medellín</h4>
+  <table class="cost-table">
+    <tr><th>Expense</th><th>Budget</th><th>Comfortable</th><th>Luxury</th></tr>
+    <tr><td>Rent (1BR furnished)</td><td>$400</td><td>$700</td><td>$1,200</td></tr>
+    <tr><td>Food (groceries + eating out)</td><td>$250</td><td>$400</td><td>$600</td></tr>
+    <tr><td>Transport</td><td>$30</td><td>$80</td><td>$200</td></tr>
+    <tr><td>Utilities/Internet</td><td>$60</td><td>$80</td><td>$100</td></tr>
+    <tr><td>Entertainment/Social</td><td>$80</td><td>$200</td><td>$400</td></tr>
+    <tr><td>Health Insurance</td><td>$60</td><td>$100</td><td>$180</td></tr>
+    <tr><td>Misc</td><td>$80</td><td>$150</td><td>$300</td></tr>
+    <tr><td><strong>TOTAL</strong></td><td><strong>$960</strong></td><td><strong>$1,710</strong></td><td><strong>$2,980</strong></td></tr>
+  </table>
+  
+  <h4>🇧🇷 Rio de Janeiro</h4>
+  <table class="cost-table">
+    <tr><th>Expense</th><th>Budget</th><th>Comfortable</th><th>Luxury</th></tr>
+    <tr><td>Rent (1BR furnished)</td><td>$700</td><td>$1,200</td><td>$2,500</td></tr>
+    <tr><td>Food (groceries + eating out)</td><td>$350</td><td>$550</td><td>$900</td></tr>
+    <tr><td>Transport</td><td>$50</td><td>$150</td><td>$350</td></tr>
+    <tr><td>Utilities/Internet</td><td>$70</td><td>$100</td><td>$150</td></tr>
+    <tr><td>Entertainment/Social</td><td>$100</td><td>$300</td><td>$600</td></tr>
+    <tr><td>Health Insurance</td><td>$100</td><td>$150</td><td>$250</td></tr>
+    <tr><td>Misc</td><td>$100</td><td>$200</td><td>$400</td></tr>
+    <tr><td><strong>TOTAL</strong></td><td><strong>$1,470</strong></td><td><strong>$2,650</strong></td><td><strong>$5,150</strong></td></tr>
+  </table>
+  
+  <h3>What "Budget" Actually Means</h3>
+  <ul>
+    <li><strong>Budget:</strong> Shared housing or studio, cooking most meals, public transport, limited going out. Survivable, not luxurious.</li>
+    <li><strong>Comfortable:</strong> Nice 1BR in good neighborhood, mix of cooking and restaurants, occasional Ubers, regular social life. What most remote workers target.</li>
+    <li><strong>Luxury:</strong> Premium apartment, eating out regularly, gym membership, travel within the country. Living well.</li>
+  </ul>
+  
+  <div class="callout warning">
+    <strong>⚠️ Hidden Costs</strong>
+    These budgets don't include: flights home, visa runs, electronics replacement, travel within the region, or building up your apartment from scratch (furniture, kitchen stuff). Budget an extra $2,000-5,000 for first-year setup costs.
+  </div>
+</div>
+
+<div class="page">
+  <h2>Chapter 15: Healthcare — What You Need to Know</h2>
+  
+  <p>Healthcare in Latin America ranges from world-class to avoid-at-all-costs. Here's how to navigate it.</p>
+  
+  <h3>The Insurance Situation</h3>
+  
+  <h4>Travel Insurance (Short-term)</h4>
+  <p>For stays under 6 months, travel insurance is usually sufficient.</p>
+  <ul>
+    <li><strong>SafetyWing:</strong> ~$40/month, designed for nomads, good for medical and travel issues</li>
+    <li><strong>World Nomads:</strong> ~$100/month, more comprehensive coverage</li>
+    <li><strong>Insured Nomads:</strong> ~$80/month, strong medical coverage</li>
+  </ul>
+  <p>Key things to check: medical evacuation coverage (should be $100,000+), COVID coverage, extreme sports exclusions.</p>
+  
+  <h4>International Health Insurance (Long-term)</h4>
+  <p>If you're staying longer, consider proper international health insurance:</p>
+  <ul>
+    <li><strong>Cigna Global:</strong> Comprehensive, expensive (~$200-500/month)</li>
+    <li><strong>Aetna International:</strong> Similar tier</li>
+    <li><strong>IMG Global:</strong> More affordable tier (~$100-200/month)</li>
+  </ul>
+  
+  <h4>Local Insurance</h4>
+  <p>In some countries, local health insurance is excellent value:</p>
+  <ul>
+    <li><strong>Mexico (IMSS/INSABI):</strong> Public options available to residents</li>
+    <li><strong>Colombia (EPS):</strong> Mandatory for residents, cheap and comprehensive</li>
+    <li><strong>Brazil (SUS):</strong> Public healthcare free for everyone (quality varies)</li>
+  </ul>
+  
+  <h3>Healthcare Quality by Country</h3>
+  
+  <h4>🇲🇽 Mexico</h4>
+  <p><span class="rating high">Excellent private healthcare</span></p>
+  <p>Private hospitals in major cities are world-class. Medical tourism is huge — many Americans come for procedures. Public system (IMSS) is overloaded but functional.</p>
+  <p><strong>Best private hospitals:</strong> ABC, Médica Sur, Hospital Ángeles (chain)</p>
+  <p><strong>Cost:</strong> Doctor visit $30-60, specialist $60-100, ER visit $100-300</p>
+  
+  <h4>🇨🇴 Colombia</h4>
+  <p><span class="rating high">Excellent private healthcare</span></p>
+  <p>Colombia is a medical tourism destination. Medellín especially has excellent private clinics. Public system through EPS is mandatory for residents and works well.</p>
+  <p><strong>Best private hospitals:</strong> Clinica Las Américas, Hospital Pablo Tobón, San Vicente</p>
+  <p><strong>Cost:</strong> Doctor visit $20-40, specialist $40-80</p>
+  
+  <h4>🇧🇷 Brazil</h4>
+  <p><span class="rating medium">Good private, variable public</span></p>
+  <p>Private healthcare in São Paulo/Rio rivals anywhere. Public (SUS) is free but often overwhelmed in major cities.</p>
+  <p><strong>Best private hospitals:</strong> Hospital Sírio-Libanês, Albert Einstein (São Paulo)</p>
+  
+  <h4>🇻🇪 Venezuela</h4>
+  <p><span class="rating low">Challenging</span></p>
+  <p>Medical system has deteriorated. Private clinics still functional but supplies can be scarce. For anything serious, you'd want evacuation to Colombia.</p>
+  
+  <h3>Practical Tips</h3>
+  <ul>
+    <li>Bring 3-6 months of any prescription medications</li>
+    <li>Many medications are OTC that require prescriptions at home (antibiotics, etc.)</li>
+    <li>Pharmacies often have doctors who can consult for free</li>
+    <li>Download doctor-on-demand apps (varies by country)</li>
+    <li>Find a recommended English-speaking doctor early (before emergency)</li>
+    <li>Know where the nearest good hospital is</li>
+  </ul>
+  
+  <div class="callout">
+    <strong>🦷 Dental Tourism</strong>
+    Getting dental work done in Mexico or Colombia is a common move. Quality is excellent, prices are 50-70% less than US. Many people plan "dental vacations" — get work done while traveling.
+  </div>
+</div>
+
+<!-- PART 4: BUILDING YOUR LIFE -->
+<div class="page">
+  <h1>Part 4: Building Your Life</h1>
+  
+  <h2>Chapter 16: Safety — Street Smarts That Work</h2>
+  
+  <p>Let's be real: Latin America has higher crime than where you're coming from. But it's also not the warzone your parents imagine. Understanding the risks — and how to mitigate them — lets you enjoy life without paranoia.</p>
+  
+  <h3>The Reality Check</h3>
+  <ul>
+    <li><strong>Petty crime</strong> (pickpocketing, phone snatching): Common, preventable with awareness</li>
+    <li><strong>Armed robbery:</strong> Happens in certain areas/times. Hand over your stuff. It's not worth your life.</li>
+    <li><strong>Express kidnapping:</strong> Rare for foreigners but exists. Victim is driven to ATMs to withdraw cash.</li>
+    <li><strong>Serious violent crime:</strong> Usually targets locals, often drug-related. Random violence against foreigners is rare.</li>
+  </ul>
+  
+  <h3>Universal Safety Rules</h3>
+  <ol>
+    <li><strong>Don't look like a target.</strong> No flashy jewelry, watches, or electronics on display. Dress down, not up.</li>
+    <li><strong>Be aware of your surroundings.</strong> Headphones out in sketchy areas. Look around, not at your phone.</li>
+    <li><strong>Trust your instincts.</strong> If something feels wrong, it probably is. Leave.</li>
+    <li><strong>Know your route.</strong> Look up directions before you leave, not on the street corner.</li>
+    <li><strong>Avoid ATMs at night.</strong> Use bank ATMs inside during daylight.</li>
+    <li><strong>Keep minimal cash on you.</strong> Enough for the day, split between pockets.</li>
+    <li><strong>Have a dummy wallet.</strong> Old wallet with expired cards and small bills. Hand this over if robbed.</li>
+    <li><strong>Uber > random taxis.</strong> Always. You want a digital trail and driver accountability.</li>
+    <li><strong>Don't fight back.</strong> Your stuff is replaceable. You are not.</li>
+  </ol>
+  
+  <h3>Night Safety</h3>
+  <ul>
+    <li>Uber/Cabify/Didi — never hail taxis at night</li>
+    <li>Stay in well-lit, populated areas</li>
+    <li>Don't walk home drunk alone</li>
+    <li>Let someone know where you're going</li>
+    <li>Share your live location with a friend when going to new places</li>
+  </ul>
+  
+  <h3>Dating Safety</h3>
+  <ul>
+    <li>First dates in public places only</li>
+    <li>Tell a friend where you're going and who with</li>
+    <li>Don't accept drinks from strangers (or leave drinks unattended)</li>
+    <li>Trust your gut about people</li>
+    <li>In Colombia especially: be aware of scopolamine — see earlier warning</li>
+  </ul>
+  
+  <h3>Home Safety</h3>
+  <ul>
+    <li>Choose buildings with 24-hour portero (doorman)</li>
+    <li>Don't open the door for unexpected visitors</li>
+    <li>Use a safe for passport and backup cash</li>
+    <li>Lock everything — don't get complacent</li>
+    <li>Get to know your neighbors — they'll look out for you</li>
+  </ul>
+  
+  <div class="callout success">
+    <strong>✅ Perspective</strong>
+    Millions of people live normal, safe lives in these cities every day. The goal isn't paranoia — it's awareness. Take reasonable precautions, live your life, and you'll be fine.
+  </div>
+</div>
+
+<div class="page">
+  <h2>Chapter 17: Learning the Language — Be Realistic</h2>
+  
+  <p>You don't need to be fluent to live in Latin America. But the more you speak, the richer your experience. Here's a realistic approach.</p>
+  
+  <h3>The Levels</h3>
+  <table>
+    <tr><th>Level</th><th>What It Means</th><th>Time Required</th></tr>
+    <tr><td>A1 (Beginner)</td><td>Basic greetings, numbers, simple phrases</td><td>1-2 months casual</td></tr>
+    <tr><td>A2 (Elementary)</td><td>Order food, get directions, simple conversations</td><td>3-4 months regular study</td></tr>
+    <tr><td>B1 (Intermediate)</td><td>Handle daily life, discuss familiar topics</td><td>6-12 months immersed</td></tr>
+    <tr><td>B2 (Upper Intermediate)</td><td>Work in the language, complex discussions</td><td>1-2 years immersed</td></tr>
+    <tr><td>C1+ (Advanced)</td><td>Near-native fluency</td><td>3+ years</td></tr>
+  </table>
+  
+  <p><strong>Realistic goal for most expats:</strong> B1 within first year. This lets you live comfortably, make local friends, and handle 90% of situations.</p>
+  
+  <h3>What Actually Works</h3>
+  
+  <h4>Before You Go</h4>
+  <ul>
+    <li><strong>Duolingo:</strong> 20-30 min daily. Good for vocabulary building and habits. Gets you to A1.</li>
+    <li><strong>Pimsleur:</strong> Audio-based. Excellent for pronunciation and conversational patterns.</li>
+    <li><strong>Language Transfer:</strong> Free audio course. Amazing for understanding the grammar logic.</li>
+  </ul>
+  
+  <h4>Once You Arrive</h4>
+  <ul>
+    <li><strong>iTalki lessons:</strong> $5-15/hour for 1-on-1 tutoring with native speakers. 3x per week minimum.</li>
+    <li><strong>Language exchanges:</strong> Lots of locals want to practice English. Fair trade.</li>
+    <li><strong>Immersion classes:</strong> Intensive programs (4+ hours daily) accelerate learning dramatically.</li>
+    <li><strong>Daily life:</strong> Force yourself to order in Spanish, chat with shopkeepers, make small talk.</li>
+  </ul>
+  
+  <h4>What Doesn't Work</h4>
+  <ul>
+    <li>Passive consumption (just watching TV/movies without study)</li>
+    <li>Apps alone (need human interaction)</li>
+    <li>Hanging out only with English speakers</li>
+    <li>Waiting until you're "ready" to speak</li>
+  </ul>
+  
+  <h3>Spanish vs. Portuguese</h3>
+  <p>If you're planning to move between countries:</p>
+  <ul>
+    <li>Spanish first — spoken in more countries, easier starting point</li>
+    <li>Spanish → Portuguese is easier than the reverse</li>
+    <li>Written Portuguese is 60-70% comprehensible to Spanish speakers</li>
+    <li>Spoken Portuguese sounds completely different — requires dedicated study</li>
+  </ul>
+  
+  <h3>Regional Differences</h3>
+  <p>Spanish varies:</p>
+  <ul>
+    <li><strong>Mexican Spanish:</strong> Clear, moderate speed, well-understood globally</li>
+    <li><strong>Colombian (Paisa):</strong> Fast, musical, some unique slang</li>
+    <li><strong>Venezuelan:</strong> Fast, swallows syllables, Caribbean influence</li>
+    <li><strong>Rioplatense (Argentina/Uruguay):</strong> Italian influence, different pronunciation</li>
+  </ul>
+  
+  <div class="callout">
+    <strong>🎯 The 30-Day Challenge</strong>
+    When you arrive: no English for 30 days except work calls. Order in Spanish. Ask for directions in Spanish. Look like an idiot. This is how you learn fast. One month of struggle = six months of casual study.
+  </div>
+</div>
+
+<div class="page">
+  <h2>Chapter 18: Dating & Social — The Honest Truth</h2>
+  
+  <p>Let's talk about what many don't: dating in Latin America as a foreigner. This section is honest, hopefully not offensive, and definitely not the idealized version you see on YouTube.</p>
+  
+  <h3>The Reality</h3>
+  <p>Yes, being foreign gives you an advantage. Novelty, perceived status, sometimes exotic appeal. But also: many locals have seen the pattern of foreigners coming for "easy" dating, using people, and leaving. Be aware of that context.</p>
+  
+  <h3>Cultural Differences</h3>
+  
+  <h4>🇲🇽 Mexico</h4>
+  <ul>
+    <li>Traditional dating culture: courtship matters</li>
+    <li>Family is central — you'll meet them sooner than you expect</li>
+    <li>Jealousy can be higher than you're used to</li>
+    <li>Less casual hookup culture (outside major cities)</li>
+    <li>Expat dating scene large in CDMX, Playa</li>
+  </ul>
+  
+  <h4>🇨🇴 Colombia</h4>
+  <ul>
+    <li>Warmest people, most direct flirting</li>
+    <li>High value placed on appearance and presentation</li>
+    <li>Be aware of transactional dynamics in some contexts</li>
+    <li>Reggaeton clubs = dancing culture = physical proximity normal</li>
+    <li>WhatsApp voice notes are how relationships work</li>
+  </ul>
+  
+  <h4>🇧🇷 Brazil</h4>
+  <ul>
+    <li>Most physically affectionate culture</li>
+    <li>Carnival energy extends to daily life</li>
+    <li>Physical touch and flirtation are normal social interaction</li>
+    <li>Dating can move fast</li>
+    <li>Portuguese is basically required for real connection</li>
+  </ul>
+  
+  <h3>Dating Apps</h3>
+  <p>They work, but differently:</p>
+  <ul>
+    <li><strong>Tinder:</strong> Works everywhere. Quality varies by city.</li>
+    <li><strong>Bumble:</strong> More popular with educated/traveled people</li>
+    <li><strong>Hinge:</strong> Growing in major cities</li>
+    <li><strong>Instagram:</strong> Actually a major dating app here. DM culture is real.</li>
+    <li><strong>In-person:</strong> Still beats everything. Approach culture is more accepted.</li>
+  </ul>
+  
+  <h3>Building Real Connections</h3>
+  <p>Beyond dating:</p>
+  <ul>
+    <li>Learn the language — seriously, this changes everything</li>
+    <li>Show genuine interest in the culture, not just "dating"</li>
+    <li>Meet people through activities, not just apps/bars</li>
+    <li>Make local friends, not just romantic interests</li>
+    <li>Be honest about your situation (how long you're staying, what you're looking for)</li>
+  </ul>
+  
+  <div class="callout warning">
+    <strong>⚠️ Don't Be That Guy</strong>
+    We all know the stereotype: the expat who treats locals as conquests, brags online, and gives everyone a bad reputation. Don't be that person. Treat people with respect. Your actions reflect on all of us.
+  </div>
+  
+  <h3>Making Friends</h3>
+  <ul>
+    <li><strong>Sports:</strong> Pickup soccer, volleyball on the beach, running groups</li>
+    <li><strong>Classes:</strong> Salsa, yoga, cooking — locals attend these too</li>
+    <li><strong>Coworking spaces:</strong> Mostly other expats, but easy social entry point</li>
+    <li><strong>Language exchanges:</strong> Equal give-and-take, natural friendship building</li>
+    <li><strong>Expat Facebook groups:</strong> Good for initial connections, but try to branch out</li>
+    <li><strong>Neighbors:</strong> Introduce yourself. In Latin culture, neighbors matter.</li>
+  </ul>
+</div>
+
+<div class="page">
+  <h2>Chapter 19: Building a Social Circle</h2>
+  
+  <p>The hardest part of expat life isn't logistics — it's loneliness. Building a social circle from scratch, as an adult, in a foreign country, takes intentional effort.</p>
+  
+  <h3>The Layered Approach</h3>
+  
+  <h4>Layer 1: Easy Entry (Weeks 1-4)</h4>
+  <ul>
+    <li>Join Facebook groups for your city (expat groups, hobby groups)</li>
+    <li>Attend one organized event per week (language exchange, trivia night, running club)</li>
+    <li>Say yes to everything — even if you're tired</li>
+    <li>Coworking space regulars become familiar faces quickly</li>
+  </ul>
+  
+  <h4>Layer 2: Deepening Connections (Months 2-3)</h4>
+  <ul>
+    <li>Follow up with people you clicked with (don't just exchange numbers and disappear)</li>
+    <li>Initiate plans — invite people for coffee, meals, activities</li>
+    <li>Join recurring activities (weekly class, regular gym schedule, same coffee shop)</li>
+    <li>Find your "third place" — somewhere you become a regular</li>
+  </ul>
+  
+  <h4>Layer 3: Real Community (Months 4+)</h4>
+  <ul>
+    <li>Small group becomes inner circle</li>
+    <li>Introduce people to each other — become a connector</li>
+    <li>Make local friends, not just expat friends</li>
+    <li>Get invited to things, not just inviting yourself</li>
+  </ul>
+  
+  <h3>The Expat Bubble Problem</h3>
+  <p>It's easy to fall into the expat bubble — hanging only with other foreigners, eating at gringo restaurants, complaining about local inefficiency. This is comfortable but hollow.</p>
+  
+  <p><strong>Signs you're in the bubble:</strong></p>
+  <ul>
+    <li>All your friends are foreigners</li>
+    <li>Your Spanish hasn't improved in months</li>
+    <li>You mostly eat at "international" restaurants</li>
+    <li>You compare everything unfavorably to home</li>
+    <li>You don't know your neighbors</li>
+  </ul>
+  
+  <p><strong>Breaking out:</strong></p>
+  <ul>
+    <li>Take local activities (not marketed to expats)</li>
+    <li>Date locally</li>
+    <li>Eat at places with no English menu</li>
+    <li>Learn the damn language</li>
+    <li>Stop spending all your time in the "nice" neighborhoods</li>
+  </ul>
+  
+  <h3>Dealing with Loneliness</h3>
+  <p>It's normal. Everyone experiences it. Strategies:</p>
+  <ul>
+    <li>Maintain routines — gym, coffee shop, regular activities</li>
+    <li>Schedule video calls with friends/family back home</li>
+    <li>Recognize that loneliness in waves is normal — it passes</li>
+    <li>Force yourself out even when you want to stay in</li>
+    <li>Consider therapy (online therapy works great abroad)</li>
+    <li>Have a creative project — something yours</li>
+  </ul>
+  
+  <div class="callout success">
+    <strong>✅ The Long Game</strong>
+    Building real community takes time. After 6-12 months, you'll have people you'd call at 2am if you needed help. But you have to put in the work early. The connections you make in month 1 might not become close friends until month 6.
+  </div>
+</div>
+
+<div class="page">
+  <h2>Chapter 20: Taxes & Legal — Don't Get Screwed</h2>
+  
+  <p>I'm not a lawyer or accountant. This is general guidance — get professional advice for your specific situation.</p>
+  
+  <h3>The US Expat Situation</h3>
+  <p>Americans are taxed on worldwide income regardless of where they live. Yes, even abroad. Key things:</p>
+  
+  <ul>
+    <li><strong>FEIE (Foreign Earned Income Exclusion):</strong> Exclude up to ~$120,000 of foreign earned income from US taxes. Must be out of US for 330 days in a 12-month period OR establish tax residency abroad.</li>
+    <li><strong>FBAR:</strong> If you have $10,000+ in foreign bank accounts (combined), you must file FBAR by April 15.</li>
+    <li><strong>FATCA:</strong> Foreign accounts over $50,000-200,000 (depending on status) require Form 8938.</li>
+    <li><strong>State taxes:</strong> Some states (California, NY) are aggressive about claiming you still owe taxes. Establish residency elsewhere or properly exit.</li>
+  </ul>
+  
+  <div class="callout warning">
+    <strong>⚠️ Get Help</strong>
+    Expat taxes are complex. Mistakes can cost thousands. Budget $500-1,500/year for an expat-specialized accountant. Worth every penny.
+  </div>
+  
+  <h3>Other Nationalities</h3>
+  <p>Most countries don't tax worldwide income if you're not resident. But rules vary:</p>
+  <ul>
+    <li><strong>UK:</strong> Non-resident after a year abroad usually means no UK tax on foreign income</li>
+    <li><strong>Canada:</strong> Residency-based, but departure rules are strict</li>
+    <li><strong>Australia:</strong> Similar to UK — residency determines taxation</li>
+    <li><strong>EU:</strong> Varies by country. Some (Spain, Italy) have special regimes for new residents.</li>
+  </ul>
+  
+  <h3>Tax Residency Abroad</h3>
+  <p>Spending time in a country can make you tax resident there:</p>
+  <ul>
+    <li><strong>Mexico:</strong> 183+ days = potential tax residency</li>
+    <li><strong>Colombia:</strong> 183+ days = potential tax residency</li>
+    <li><strong>Brazil:</strong> Complex rules — get advice if staying long-term</li>
+  </ul>
+  <p>Tax residency can mean filing obligations, but often rates are lower than home countries.</p>
+  
+  <h3>Structuring for the Long Term</h3>
+  <p>Common strategies (consult professionals):</p>
+  <ul>
+    <li><strong>Establish LLC or company in low-tax jurisdiction</strong></li>
+    <li><strong>Use tax treaties to reduce withholding</strong></li>
+    <li><strong>Split time between countries strategically</strong></li>
+    <li><strong>Consider residence in a territorial tax country</strong> (Panama, Paraguay, Costa Rica)</li>
+  </ul>
+  
+  <h3>Legal Stuff</h3>
+  <ul>
+    <li>Keep copies of all visa stamps and immigration paperwork</li>
+    <li>Don't work illegally — consequences can include deportation and bans</li>
+    <li>Understand local laws — drug laws are often stricter than you think</li>
+    <li>Have a basic will and power of attorney</li>
+    <li>Know how to contact your embassy</li>
+  </ul>
+  
+  <div class="callout">
+    <strong>📁 Record Keeping</strong>
+    Keep copies of: all visa stamps, entry/exit records, apartment leases, utility bills, bank statements. Some of these prove foreign residence for tax purposes. Digital backup of everything important.
+  </div>
+</div>
+
+<!-- PART 5: YOUR FIRST YEAR -->
+<div class="page">
+  <h1>Part 5: Your First Year</h1>
+  
+  <h2>Chapter 21: Month-by-Month Timeline</h2>
+  
+  <p>Here's what a typical first year looks like. Your mileage will vary, but this gives you a roadmap.</p>
+  
+  <div class="timeline">
+    <div class="timeline-item">
+      <h4>Month 1: Arrival & Orientation</h4>
+      <ul>
+        <li>Land, get SIM card, settle into Airbnb</li>
+        <li>Explore neighborhood on foot</li>
+        <li>Get oriented: grocery stores, pharmacy, gym, coffee spots</li>
+        <li>Set up mobile payment apps</li>
+        <li>Start language lessons if not already speaking</li>
+        <li>Join expat Facebook groups, attend 2-3 meetups</li>
+        <li>Scout neighborhoods for longer-term housing</li>
+      </ul>
+    </div>
+    
+    <div class="timeline-item">
+      <h4>Month 2: Settling In</h4>
+      <ul>
+        <li>Move into medium-term rental (3-month lease)</li>
+        <li>Establish routines: gym schedule, work spots, social activities</li>
+        <li>Open local bank account if possible</li>
+        <li>Find reliable transportation patterns</li>
+        <li>Identify your "third place" (cafe, coworking, etc.)</li>
+        <li>Continue language intensive (3-5 hours/week minimum)</li>
+      </ul>
+    </div>
+    
+    <div class="timeline-item">
+      <h4>Month 3: Deepening</h4>
+      <ul>
+        <li>Social circle forming — some people becoming regular friends</li>
+        <li>Comfort with daily life in Spanish/Portuguese increasing</li>
+        <li>Explore beyond your neighborhood and city</li>
+        <li>Evaluate: is this the right city/country for longer term?</li>
+        <li>If yes, start looking for year-long housing</li>
+        <li>If no, start planning next destination</li>
+      </ul>
+    </div>
+    
+    <div class="timeline-item">
+      <h4>Months 4-6: Transition</h4>
+      <ul>
+        <li>Tourist visa may need renewal (border run or extension)</li>
+        <li>Move into long-term apartment if staying</li>
+        <li>Life starts feeling normal rather than novel</li>
+        <li>Possible dip in motivation/excitement (normal)</li>
+        <li>Deepen local relationships</li>
+        <li>Consider longer-term visa if available</li>
+      </ul>
+    </div>
+    
+    <div class="timeline-item">
+      <h4>Months 7-9: Integration</h4>
+      <ul>
+        <li>You're a local now, not a tourist</li>
+        <li>Language noticeably improved</li>
+        <li>Real friendships established (expat and local)</li>
+        <li>Systems running smoothly — healthcare, banking, logistics</li>
+        <li>May start to feel wanderlust or settled, depending on personality</li>
+      </ul>
+    </div>
+    
+    <div class="timeline-item">
+      <h4>Months 10-12: Reflection</h4>
+      <ul>
+        <li>One year milestone</li>
+        <li>Evaluate: extend, move countries, or go home?</li>
+        <li>Visa situation needs attention (renewal or new status)</li>
+        <li>Tax filing considerations</li>
+        <li>Deep comfort with life abroad</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="callout">
+    <strong>📈 The Emotional Curve</strong>
+    Expect: Initial excitement (months 1-2), reality check (months 3-4), possible low point (months 4-6), rebuilding (months 6-9), integration (months 9-12). Almost everyone goes through this. The dip is normal — don't make big decisions during it.
+  </div>
+</div>
+
+<div class="page">
+  <h2>Chapter 22: When Things Go Wrong</h2>
+  
+  <p>Bad things happen. Here's how to handle them.</p>
+  
+  <h3>Lost/Stolen Passport</h3>
+  <ol>
+    <li>File police report (denuncia) — required for replacement</li>
+    <li>Contact your embassy ASAP</li>
+    <li>Bring: police report, passport photos, identification you have, copy of old passport if available</li>
+    <li>Emergency passport usually issued in 24-48 hours</li>
+    <li>May need to rebook travel (embassy can help with airlines)</li>
+  </ol>
+  <p><strong>Prevention:</strong> Keep passport locked in safe. Carry a color copy for daily ID.</p>
+  
+  <h3>Medical Emergency</h3>
+  <ol>
+    <li>Call emergency services (911 in Mexico, 123 in Colombia, 192 in Brazil)</li>
+    <li>For non-emergency but urgent: Uber to private hospital ER</li>
+    <li>Contact your insurance provider immediately</li>
+    <li>Call family/emergency contact</li>
+    <li>Keep insurance cards and emergency contacts in phone</li>
+  </ol>
+  
+  <h3>Getting Robbed</h3>
+  <ol>
+    <li><strong>Don't resist.</strong> Your stuff isn't worth your life.</li>
+    <li>Hand over what they ask for</li>
+    <li>Get to safety, then process</li>
+    <li>File police report (for insurance, though recovery unlikely)</li>
+    <li>Cancel cards immediately (use your backup phone)</li>
+    <li>Contact embassy if passport taken</li>
+  </ol>
+  
+  <h3>Natural Disaster/Political Crisis</h3>
+  <ol>
+    <li>Register with your embassy (STEP program for Americans)</li>
+    <li>Follow local news in Spanish (Google Translate the headlines)</li>
+    <li>Have emergency kit: water, food, flashlight, battery pack, cash</li>
+    <li>Know evacuation routes</li>
+    <li>Have exit plan (flights, land routes)</li>
+  </ol>
+  
+  <h3>Running Out of Money</h3>
+  <ul>
+    <li>Have emergency fund accessible (not tied up in investments)</li>
+    <li>Budget for 3+ months buffer before you go</li>
+    <li>Wise or PayPal for emergency transfers from family</li>
+    <li>Western Union works almost everywhere</li>
+    <li>Embassy can help with repatriation as last resort</li>
+  </ul>
+  
+  <h3>Visa Issues</h3>
+  <ul>
+    <li>Never overstay — consequences include fines and bans</li>
+    <li>Build buffer time for extensions (bureaucracy is slow)</li>
+    <li>Consult an immigration lawyer if complicated situation</li>
+    <li>Embassy can provide guidance but can't fix everything</li>
+  </ul>
+  
+  <div class="callout success">
+    <strong>✅ Preparation Is Prevention</strong>
+    Most crises are survivable with preparation: copies of documents in cloud, emergency cash hidden at home, backup cards, insurance that covers evacuation, local emergency contact who speaks your language. Set these up before you need them.
+  </div>
+</div>
+
+<div class="page">
+  <h2>Chapter 23: Long-Term Residency Paths</h2>
+  
+  <p>If you decide to stay, here are your options for permanent residency and eventually citizenship.</p>
+  
+  <h3>🇲🇽 Mexico</h3>
+  <table>
+    <tr><th>Status</th><th>Requirements</th><th>Path Forward</th></tr>
+    <tr>
+      <td>Temporary Resident</td>
+      <td>Income ~$2,500/month or savings ~$43,000</td>
+      <td>Renewable 1-4 years</td>
+    </tr>
+    <tr>
+      <td>Permanent Resident</td>
+      <td>4 years as Temp Resident OR higher income threshold</td>
+      <td>No renewal needed, work rights</td>
+    </tr>
+    <tr>
+      <td>Citizenship</td>
+      <td>5 years permanent residency, language test, civics test</td>
+      <td>Dual citizenship allowed</td>
+    </tr>
+  </table>
+  <p><strong>Note:</strong> Mexico allows dual citizenship. Many keep home passport while gaining Mexican.</p>
+  
+  <h3>🇨🇴 Colombia</h3>
+  <table>
+    <tr><th>Status</th><th>Requirements</th><th>Path Forward</th></tr>
+    <tr>
+      <td>Digital Nomad Visa</td>
+      <td>Income ~$3,000/month, remote work</td>
+      <td>2 years, renewable</td>
+    </tr>
+    <tr>
+      <td>Migrant Visa (M)</td>
+      <td>Various categories: work, marriage, retirement</td>
+      <td>1-3 years, leads to residency</td>
+    </tr>
+    <tr>
+      <td>Resident Visa (R)</td>
+      <td>5 years continuous on M visa</td>
+      <td>Permanent, no renewal</td>
+    </tr>
+    <tr>
+      <td>Citizenship</td>
+      <td>5 years residency (reduced if married to Colombian)</td>
+      <td>Dual citizenship allowed</td>
+    </tr>
+  </table>
+  
+  <h3>🇧🇷 Brazil</h3>
+  <table>
+    <tr><th>Status</th><th>Requirements</th><th>Path Forward</th></tr>
+    <tr>
+      <td>Temporary Visa</td>
+      <td>Various: work, retirement, investor</td>
+      <td>1-2 years</td>
+    </tr>
+    <tr>
+      <td>Permanent Visa</td>
+      <td>After 4 years temporary OR investment of R$500,000</td>
+      <td>Indefinite</td>
+    </tr>
+    <tr>
+      <td>Citizenship</td>
+      <td>4 years continuous residence, Portuguese proficiency</td>
+      <td>Dual allowed, but Brazil doesn't recognize it</td>
+    </tr>
+  </table>
+  <p><strong>Note:</strong> Brazil's rule is tricky — you can keep both passports but must enter/exit Brazil on Brazilian passport once citizen.</p>
+  
+  <h3>The Marriage Path</h3>
+  <p>Marriage to a local accelerates everything:</p>
+  <ul>
+    <li>Immediate temporary residency in most countries</li>
+    <li>Faster path to permanent residency (often 1-2 years)</li>
+    <li>Faster path to citizenship (often halved)</li>
+  </ul>
+  <p>Don't get married for a visa. But if you're in a real relationship, know it helps.</p>
+  
+  <h3>The Investment Path</h3>
+  <p>Most countries have investor visas:</p>
+  <ul>
+    <li>Mexico: Invest in Mexican business or property</li>
+    <li>Colombia: Invest ~$170,000 in business or property</li>
+    <li>Brazil: Invest ~$100,000 in productive activity</li>
+  </ul>
+  <p>Property alone rarely qualifies — must be productive investment or company creation. Consult immigration lawyer for current thresholds.</p>
+  
+  <div class="callout">
+    <strong>🌎 Second Passport Strategy</strong>
+    A Latin American passport is increasingly valuable — visa-free access to Europe (for some), easier Americas travel, backup citizenship. The investment in time (5+ years) pays off if you're committed to the region.
+  </div>
+</div>
+
+<!-- APPENDICES -->
+<div class="page">
+  <h1>Appendices</h1>
+  
+  <h2>Appendix A: Emergency Contacts by Country</h2>
+  
+  <h3>🇲🇽 Mexico</h3>
+  <table>
+    <tr><td>Emergency Services</td><td>911</td></tr>
+    <tr><td>Tourist Assistance</td><td>078 (inside Mexico)</td></tr>
+    <tr><td>US Embassy Mexico City</td><td>+52 55 5080-2000</td></tr>
+    <tr><td>UK Embassy Mexico City</td><td>+52 55 1670-3200</td></tr>
+    <tr><td>Canadian Embassy</td><td>+52 55 5724-7900</td></tr>
+  </table>
+  
+  <h3>🇨🇴 Colombia</h3>
+  <table>
+    <tr><td>Emergency Services</td><td>123</td></tr>
+    <tr><td>Police</td><td>112</td></tr>
+    <tr><td>US Embassy Bogotá</td><td>+57 1 275-2000</td></tr>
+    <tr><td>UK Embassy Bogotá</td><td>+57 1 326-8300</td></tr>
+    <tr><td>Canadian Embassy</td><td>+57 1 657-9800</td></tr>
+  </table>
+  
+  <h3>🇧🇷 Brazil</h3>
+  <table>
+    <tr><td>Emergency/Police</td><td>190</td></tr>
+    <tr><td>Ambulance</td><td>192</td></tr>
+    <tr><td>Fire</td><td>193</td></tr>
+    <tr><td>US Consulate São Paulo</td><td>+55 11 3250-5000</td></tr>
+    <tr><td>US Consulate Rio</td><td>+55 21 3823-2000</td></tr>
+    <tr><td>UK Embassy Brasília</td><td>+55 61 3329-2300</td></tr>
+  </table>
+  
+  <h3>🇻🇪 Venezuela</h3>
+  <table>
+    <tr><td>Emergency Services</td><td>171</td></tr>
+    <tr><td>Police</td><td>911</td></tr>
+    <tr><td>Note</td><td>US Embassy closed — Swiss Embassy handles US affairs</td></tr>
+    <tr><td>Swiss Embassy (US interests)</td><td>+58 212 975-4500</td></tr>
+    <tr><td>UK Embassy Caracas</td><td>+58 212 263-8411</td></tr>
+  </table>
+  
+  <div class="callout">
+    <strong>📱 Save These Now</strong>
+    Add these numbers to your phone before you need them. Create a note called "Emergency Contacts" with embassy numbers, your insurance provider, and trusted local contacts.
+  </div>
+</div>
+
+<div class="page">
+  <h2>Appendix B: Useful Apps & Websites</h2>
+  
+  <h3>Communication</h3>
+  <ul>
+    <li><strong>WhatsApp</strong> — Essential. Everyone uses it.</li>
+    <li><strong>Telegram</strong> — Backup, groups, channels</li>
+    <li><strong>Google Voice</strong> — Keep a US number</li>
+  </ul>
+  
+  <h3>Money & Banking</h3>
+  <ul>
+    <li><strong>Wise</strong> — Multi-currency, best rates</li>
+    <li><strong>Mercado Pago</strong> — Mexico/Argentina payments</li>
+    <li><strong>Nequi</strong> — Colombia mobile banking</li>
+    <li><strong>Nubank</strong> — Brazil digital bank</li>
+    <li><strong>XE Currency</strong> — Exchange rate tracking</li>
+  </ul>
+  
+  <h3>Transportation</h3>
+  <ul>
+    <li><strong>Uber</strong> — Works in most major cities</li>
+    <li><strong>DiDi</strong> — Mexico, Brazil, Colombia</li>
+    <li><strong>Cabify</strong> — Some cities, sometimes better rates</li>
+    <li><strong>Rappi</strong> — Food delivery + everything delivery</li>
+    <li><strong>99</strong> — Brazil ridesharing</li>
+    <li><strong>Rome2Rio</strong> — Transportation between cities</li>
+  </ul>
+  
+  <h3>Housing</h3>
+  <ul>
+    <li><strong>Airbnb</strong> — Short-term</li>
+    <li><strong>Inmuebles24</strong> — Mexico rentals</li>
+    <li><strong>Finca Raiz</strong> — Colombia rentals</li>
+    <li><strong>Zap Imóveis</strong> — Brazil rentals</li>
+    <li><strong>Facebook Groups</strong> — "[City] Rentals" etc.</li>
+  </ul>
+  
+  <h3>Language</h3>
+  <ul>
+    <li><strong>Duolingo</strong> — Daily practice</li>
+    <li><strong>Pimsleur</strong> — Audio-based learning</li>
+    <li><strong>iTalki</strong> — Online tutoring</li>
+    <li><strong>Google Translate</strong> — Camera translation is magic</li>
+    <li><strong>DeepL</strong> — Better translations for complex text</li>
+  </ul>
+  
+  <h3>Maps & Navigation</h3>
+  <ul>
+    <li><strong>Google Maps</strong> — Download offline maps!</li>
+    <li><strong>Maps.me</strong> — Great offline backup</li>
+    <li><strong>Waze</strong> — Traffic/driving</li>
+  </ul>
+  
+  <h3>Dating & Social</h3>
+  <ul>
+    <li><strong>Tinder</strong> — Works everywhere</li>
+    <li><strong>Bumble</strong> — Growing in cities</li>
+    <li><strong>Hinge</strong> — More relationship-focused</li>
+    <li><strong>Meetup</strong> — Events and groups</li>
+    <li><strong>Internations</strong> — Expat events</li>
+  </ul>
+  
+  <h3>Safety</h3>
+  <ul>
+    <li><strong>Citizen</strong> — Crime alerts (some cities)</li>
+    <li><strong>TripIt</strong> — Organize travel documents</li>
+    <li><strong>1Password/Bitwarden</strong> — Password security</li>
+    <li><strong>ExpressVPN/NordVPN</strong> — Security + geo-unblocking</li>
+  </ul>
+<div class="page">
+  <h2>Appendix C: Spanish/Portuguese Phrase Sheets</h2>
+  
+  <h3>Essential Spanish Phrases</h3>
+  
+  <h4>Basics</h4>
+  <table>
+    <tr><th>English</th><th>Spanish</th><th>Pronunciation</th></tr>
+    <tr><td>Hello</td><td>Hola</td><td>OH-lah</td></tr>
+    <tr><td>Good morning</td><td>Buenos días</td><td>BWEH-nos DEE-ahs</td></tr>
+    <tr><td>Good afternoon</td><td>Buenas tardes</td><td>BWEH-nahs TAR-dehs</td></tr>
+    <tr><td>Good night</td><td>Buenas noches</td><td>BWEH-nahs NO-chehs</td></tr>
+    <tr><td>Please</td><td>Por favor</td><td>por fah-VOR</td></tr>
+    <tr><td>Thank you</td><td>Gracias</td><td>GRAH-see-ahs</td></tr>
+    <tr><td>You're welcome</td><td>De nada</td><td>deh NAH-dah</td></tr>
+    <tr><td>Excuse me</td><td>Disculpe / Permiso</td><td>dees-KOOL-peh / pehr-MEE-so</td></tr>
+    <tr><td>Sorry</td><td>Lo siento</td><td>lo see-EHN-toh</td></tr>
+    <tr><td>Yes / No</td><td>Sí / No</td><td>see / no</td></tr>
+  </table>
+  
+  <h4>Practical Survival</h4>
+  <table>
+    <tr><th>English</th><th>Spanish</th></tr>
+    <tr><td>I don't understand</td><td>No entiendo</td></tr>
+    <tr><td>Do you speak English?</td><td>¿Habla inglés?</td></tr>
+    <tr><td>I speak a little Spanish</td><td>Hablo un poco de español</td></tr>
+    <tr><td>Can you repeat that?</td><td>¿Puede repetir?</td></tr>
+    <tr><td>More slowly please</td><td>Más despacio, por favor</td></tr>
+    <tr><td>How much does this cost?</td><td>¿Cuánto cuesta?</td></tr>
+    <tr><td>Where is...?</td><td>¿Dónde está...?</td></tr>
+    <tr><td>I need help</td><td>Necesito ayuda</td></tr>
+    <tr><td>I'm looking for...</td><td>Estoy buscando...</td></tr>
+    <tr><td>The check, please</td><td>La cuenta, por favor</td></tr>
+  </table>
+  
+  <h4>Housing/Rental</h4>
+  <table>
+    <tr><th>English</th><th>Spanish</th></tr>
+    <tr><td>I'm looking for an apartment</td><td>Estoy buscando un departamento</td></tr>
+    <tr><td>How much is the rent?</td><td>¿Cuánto es la renta?</td></tr>
+    <tr><td>Is furniture included?</td><td>¿Incluye muebles?</td></tr>
+    <tr><td>Are utilities included?</td><td>¿Incluye servicios?</td></tr>
+    <tr><td>I'll take it</td><td>Lo tomo</td></tr>
+    <tr><td>Can I see the contract?</td><td>¿Puedo ver el contrato?</td></tr>
+  </table>
+  
+  <h4>Emergencies</h4>
+  <table>
+    <tr><th>English</th><th>Spanish</th></tr>
+    <tr><td>Help!</td><td>¡Ayuda!</td></tr>
+    <tr><td>Call the police</td><td>Llame a la policía</td></tr>
+    <tr><td>I need a doctor</td><td>Necesito un médico</td></tr>
+    <tr><td>I've been robbed</td><td>Me robaron</td></tr>
+    <tr><td>I lost my passport</td><td>Perdí mi pasaporte</td></tr>
+    <tr><td>I'm allergic to...</td><td>Soy alérgico a...</td></tr>
+    <tr><td>Where is the hospital?</td><td>¿Dónde está el hospital?</td></tr>
+  </table>
+  
+  <h3>Essential Portuguese Phrases (Brazil)</h3>
+  
+  <h4>Basics</h4>
+  <table>
+    <tr><th>English</th><th>Portuguese</th><th>Pronunciation</th></tr>
+    <tr><td>Hello</td><td>Olá / Oi</td><td>oh-LAH / oy</td></tr>
+    <tr><td>Good morning</td><td>Bom dia</td><td>bom JEE-ah</td></tr>
+    <tr><td>Good afternoon</td><td>Boa tarde</td><td>BOH-ah TAR-jee</td></tr>
+    <tr><td>Good night</td><td>Boa noite</td><td>BOH-ah NOY-chee</td></tr>
+    <tr><td>Please</td><td>Por favor</td><td>por fah-VOR</td></tr>
+    <tr><td>Thank you</td><td>Obrigado (m) / Obrigada (f)</td><td>oh-bree-GAH-doo</td></tr>
+    <tr><td>You're welcome</td><td>De nada</td><td>jee NAH-dah</td></tr>
+    <tr><td>Excuse me</td><td>Com licença</td><td>kom lee-SEN-sah</td></tr>
+    <tr><td>Sorry</td><td>Desculpa</td><td>desh-KOOL-pah</td></tr>
+  </table>
+  
+  <h4>Practical</h4>
+  <table>
+    <tr><th>English</th><th>Portuguese</th></tr>
+    <tr><td>I don't understand</td><td>Não entendo</td></tr>
+    <tr><td>Do you speak English?</td><td>Você fala inglês?</td></tr>
+    <tr><td>I speak a little Portuguese</td><td>Falo um pouco de português</td></tr>
+    <tr><td>How much?</td><td>Quanto custa?</td></tr>
+    <tr><td>Where is...?</td><td>Onde fica...?</td></tr>
+    <tr><td>I need help</td><td>Preciso de ajuda</td></tr>
+    <tr><td>The check, please</td><td>A conta, por favor</td></tr>
+  </table>
+  
+  <div class="callout">
+    <strong>🗣️ Pronunciation Notes</strong>
+    <p><strong>Spanish:</strong> Generally phonetic. Roll your Rs. J sounds like English H. Ll sounds like Y (in most countries).</p>
+    <p><strong>Portuguese:</strong> Much harder! Many sounds that don't exist in English. The "ão" nasal sound takes practice. Final E often sounds like "ee". D before I sounds like "jee". Listen to natives and imitate.</p>
+  </div>
+</div>
+
+<div class="page">
+  <h2>Appendix D: Telegram Community Access</h2>
+  
+  <div style="text-align: center; padding: 3rem; background: linear-gradient(135deg, var(--slate-800), var(--slate-900)); border-radius: 12px; margin: 2rem 0;">
+    <h3 style="color: var(--amber); margin-bottom: 1rem;">🔐 Private Community Access</h3>
+    <p style="color: var(--slate-300); margin-bottom: 1.5rem;">
+      Join our private Telegram group for premium guide owners. Get real-time updates, ask questions, and connect with other expats.
+    </p>
+    <div style="background: var(--slate-700); padding: 1.5rem; border-radius: 8px; display: inline-block;">
+      <p style="font-size: 0.9rem; color: var(--slate-400); margin-bottom: 0.5rem;">Join Link:</p>
+      <a href="https://t.me/+expatbroinsiders" style="color: var(--amber); font-size: 1.1rem; text-decoration: none; font-weight: 600;">
+        t.me/+expatbroinsiders
+      </a>
+    </div>
+    <p style="color: var(--slate-500); font-size: 0.85rem; margin-top: 1.5rem;">
+      Link is exclusive to guide purchasers. Please don't share publicly.
+    </p>
+  </div>
+  
+  <h3>What You Get</h3>
+  <ul>
+    <li><strong>Real-time updates:</strong> Visa changes, exchange rate tips, new opportunities</li>
+    <li><strong>Q&A access:</strong> Ask questions directly — I answer personally</li>
+    <li><strong>Community:</strong> Connect with other expats at various stages of their journey</li>
+    <li><strong>Local tips:</strong> Members share neighborhood recommendations, deals, warnings</li>
+    <li><strong>Country-specific channels:</strong> Mexico, Colombia, Brazil discussions</li>
+  </ul>
+  
+  <h3>Community Guidelines</h3>
+  <ol>
+    <li>Be helpful. We're all figuring this out.</li>
+    <li>No spam, promotions, or crypto shilling.</li>
+    <li>Keep it respectful. Different paths for different people.</li>
+    <li>Share what you learn. Pay it forward.</li>
+    <li>No politics. Plenty of other places for that.</li>
+  </ol>
+  
+  <h3>Quarterly Updates</h3>
+  <p>Every quarter, you'll receive an email with:</p>
+  <ul>
+    <li>Visa rule changes</li>
+    <li>Cost of living updates</li>
+    <li>New neighborhood recommendations</li>
+    <li>App and service updates</li>
+    <li>Anything else that's changed</li>
+  </ul>
+  <p>Make sure you purchased with a valid email to receive updates.</p>
+</div>
+
+<div class="page" style="text-align: center; padding: 4rem 2rem;">
+  <h2 style="color: var(--amber); font-size: 2rem; margin-bottom: 1rem;">You Made It. 🎉</h2>
+  
+  <p style="font-size: 1.1rem; color: var(--slate-600); max-width: 500px; margin: 0 auto 2rem;">
+    That's 85 pages of everything I know about moving to Latin America. Now the only thing left is to actually do it.
+  </p>
+  
+  <div style="background: var(--slate-100); padding: 2rem; border-radius: 12px; max-width: 500px; margin: 0 auto;">
+    <h3 style="color: var(--slate-800); margin-bottom: 1rem;">Next Steps</h3>
+    <ol style="text-align: left; color: var(--slate-700);">
+      <li style="margin-bottom: 0.75rem;">Pick your first destination (start with Chapter 10 matrix)</li>
+      <li style="margin-bottom: 0.75rem;">Book a 1-month exploratory trip</li>
+      <li style="margin-bottom: 0.75rem;">Work through the pre-departure checklist (Chapter 2)</li>
+      <li style="margin-bottom: 0.75rem;">Start language learning now — even 10 min/day helps</li>
+      <li style="margin-bottom: 0.75rem;">Join the Telegram community (Appendix D)</li>
+    </ol>
+  </div>
+  
+  <div style="margin-top: 3rem;">
+    <h3 style="color: var(--slate-800);">Need More Help?</h3>
+    <p style="color: var(--slate-600);">Book a 1-on-1 strategy call to discuss your specific situation.</p>
+    <a href="https://expatbro.co/#book" style="display: inline-block; background: var(--amber); color: var(--slate-900); padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; margin-top: 1rem;">
+      Book a Call — $150
+    </a>
+  </div>
+  
+  <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--slate-200);">
+    <p style="color: var(--slate-400); font-size: 0.9rem;">
+      Questions? Feedback? Email me: dan@expatbro.co
+    </p>
+    <p style="color: var(--slate-400); font-size: 0.85rem; margin-top: 1rem;">
+      © 2026 Expat Bro. All rights reserved.<br>
+      This guide is for personal use only. Please don't share or distribute.
+    </p>
+  </div>
+</div>
+
+<footer>
+  <p>The Complete Relocation Bible — Version 1.0</p>
+  <p>© 2026 Dan Thomson / Expat Bro. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

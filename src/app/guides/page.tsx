@@ -110,7 +110,7 @@ export default function GuidesPage() {
                 ))}
               </ul>
               <a
-                href="https://buy.stripe.com/expatbro-relocation-bible"
+                href="https://buy.stripe.com/9B68wPgzf5A2aqoczI9bO00"
                 target="_blank"
                 className="block w-full bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold py-4 px-6 rounded-lg text-center transition"
               >
@@ -235,7 +235,7 @@ export default function GuidesPage() {
               Download Free Guide
             </a>
             <a
-              href="https://buy.stripe.com/expatbro-relocation-bible"
+              href="https://buy.stripe.com/9B68wPgzf5A2aqoczI9bO00"
               target="_blank"
               className="bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold py-4 px-8 rounded-lg transition"
             >

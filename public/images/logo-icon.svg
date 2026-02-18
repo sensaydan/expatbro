@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="none">
+  <!-- Globe -->
+  <circle cx="25" cy="25" r="20" stroke="#f59e0b" stroke-width="2.5" fill="none"/>
+  <!-- Americas -->
+  <path d="M20 10 Q15 15, 18 22 Q16 28, 20 35 Q22 38, 25 40" stroke="#f59e0b" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M30 12 Q35 18, 32 25 Q34 30, 30 36" stroke="#f59e0b" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Latitude -->
+  <ellipse cx="25" cy="25" rx="18" ry="6" stroke="#f59e0b" stroke-width="1" fill="none" opacity="0.5"/>
+  <!-- Palm accent -->
+  <path d="M38 38 L38 30" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
+  <path d="M38 30 Q34 27, 32 29" stroke="#f59e0b" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M38 30 Q42 27, 44 29" stroke="#f59e0b" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M38 30 Q38 25, 38 23" stroke="#f59e0b" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+</svg>
